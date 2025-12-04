@@ -1,108 +1,161 @@
-/* --------------------------------------------------------------------------
-   2. CSS RESET & BASE STYLES
+/* VARIABLES */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-accent: #ff6ca8;
+  --color-accent-dark: #d9558a;
 
-   🎓 WHY A CSS RESET?
-   Browsers apply default styles (margins, paddings, fonts) that vary between
-   browsers. A reset creates a consistent baseline so YOUR styles are in control.
+  --font-main: "Inter", sans-serif;
 
-   💡 MODERN RESET PHILOSOPHY:
-   We're not removing ALL defaults (like the old "CSS Reset" approach).
-   Instead, we selectively normalize the most problematic differences while
-   keeping useful defaults like list markers in appropriate contexts.
-   -------------------------------------------------------------------------- */
+  /* Tipografía fluida */
+  --fs-h1: clamp(2rem, 5vw, 3.5rem);
+  --fs-h2: clamp(1.5rem, 4vw, 2.5rem);
+  --fs-p: clamp(1rem, 2.2vw, 1.2rem);
 
-/*
- * UNIVERSAL BOX-SIZING
- *
- * border-box includes padding and border in the element's total width/height.
- * This makes sizing predictable: a 200px box stays 200px even with padding.
- *
- * Without this: width: 200px + padding: 20px = actual width of 240px 😱
- * With this:    width: 200px + padding: 20px = actual width of 200px ✅
- */
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  --max-width: 1200px;
 }
 
-/*
- * SMOOTH SCROLLING
- *
- * Native CSS smooth scrolling for anchor links. No JavaScript needed!
- * This is automatically disabled when prefers-reduced-motion is set.
- */
-html {
-	scroll-behavior: smooth;
+/* RESET LIGERO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/*
- * BASE TYPOGRAPHY
- *
- * System font stack: Uses the user's OS font for familiarity and performance.
- * No font files to download = faster page load!
- *
- * Line-height 1.6 is optimal for body text readability (1.5-1.7 range).
- */
 body {
-	/* Use a token from theme.css so typography choices are centralized */
-	font-family: var(--font-family-sans);
-	font-size: var(--text-base);  /* Uses our fluid typography variable */
-	line-height: var(--leading-base);
-	font-weight: var(--font-weight-regular);
-	color: var(--color-text);
-	background-color: var(--color-bg);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: var(--fs-p);
+  line-height: 1.6;
 }
 
-/*
- * RESPONSIVE IMAGES
- *
- * max-width: 100% prevents images from overflowing their containers.
- * height: auto maintains aspect ratio when width changes.
- * display: block removes the inline whitespace gap below images.
- */
-img {
-	max-width: 100%;
-	height: auto;
-	display: block;
+/* CONTENEDORES */
+.wrapper {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
-/*
- * LINK RESET
- *
- * Inherit color from parent and remove underline by default.
- * We'll add specific link styles where needed.
- */
-a {
-	color: inherit;
-	text-decoration: none;
+/* NAVBAR */
+header {
+  width: 100%;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
 }
 
-/* --------------------------------------------------------------------------
-   SKIP LINK (ACCESSIBILITY)
-
-   🎓 WHY SKIP LINKS?
-   Screen reader and keyboard users shouldn't have to tab through the entire
-   navigation on every page. A skip link lets them jump directly to main content.
-
-   The link is hidden off-screen until focused, then slides into view.
-   This is a WCAG 2.1 Level A requirement for accessible navigation.
-   -------------------------------------------------------------------------- */
-.skip-link {
-	position: absolute;
-	top: -100%;                       /* Hidden above viewport */
-	left: 50%;
-	transform: translateX(-50%);      /* Center horizontally */
-	background: var(--color-accent);
-	color: white;
-	padding: var(--space-sm) var(--space-md);
-	border-radius: 0 0 8px 8px;       /* Rounded bottom corners only */
-	z-index: 1000;                    /* Above everything */
-	transition: top 0.3s;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.skip-link:focus {
-	top: 0;  /* Slides into view when focused via keyboard */
+nav .logo {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+/* MENÚ MÓVIL */
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: var(--color-text);
+  transition: 0.3s;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.hero h1 {
+  font-size: var(--fs-h1);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+/* GALERÍA GENERAL */
+.grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: 0.2s ease;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* FOOTER */
+footer {
+  padding: 2rem 0;
+  text-align: center;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE NAV */
+@media (max-width: 800px) {
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    background: var(--color-bg);
+    flex-direction: column;
+    width: 60%;
+    padding: 1.5rem;
+    gap: 1rem;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    display: none;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
 }
