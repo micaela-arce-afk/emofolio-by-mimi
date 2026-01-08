@@ -29,7 +29,7 @@
   color: var(--primary-color);
 }
 
-/* Hero main 4 columnas */
+/* Hero main */
 .hero-main {
   display: flex;
   width: 100%;
@@ -42,19 +42,20 @@
   width: 25%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   padding: 2rem;
   gap: 1rem;
   position: relative;
   color: var(--text-color);
 }
 
-/* Nombres verticales */
+/* Nombres verticales rotados 180° */
 .name-vertical {
   writing-mode: vertical-rl;
   text-orientation: mixed;
+  transform: rotate(180deg);
   font-weight: 900;
-  text-align: center;
+  text-align: left;
   letter-spacing: 0.2rem;
 }
 
@@ -66,9 +67,25 @@
   font-size: 7rem;
 }
 
-/* Carrusel dentro del side */
-.carousel-btn.next {
-  padding: 0.6rem 1.2rem;
+/* Profesiones más bold */
+.professions {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: left;
+  margin-left: 0.5rem;
+}
+
+/* Botones carrusel */
+.carousel-controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.carousel-btn {
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 8px;
   background-color: var(--primary-color);
@@ -78,14 +95,8 @@
   transition: background-color 0.3s;
 }
 
-.carousel-btn.next:hover {
+.carousel-btn:hover {
   background-color: var(--accent-color);
-}
-
-/* Profesiones */
-.professions {
-  font-size: 1rem;
-  text-align: center;
 }
 
 /* Carrusel 3/4 derecho */
@@ -107,7 +118,7 @@
   display: none;
   width: 100%;
   border-radius: 12px;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .carousel-item.active {
@@ -122,10 +133,17 @@
   .hero-side,
   .carousel-container {
     width: 100%;
+    align-items: center;
   }
   .name-vertical.angel,
-  .name-vertical.mikan {
+  .name-vertical.mikan,
+  .professions {
     writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+    text-align: center;
     font-size: 3rem;
+  }
+  .carousel-controls {
+    justify-content: center;
   }
 }
