@@ -1,40 +1,7 @@
-/* ==================================================
-   THEME / VARIABLES 
-================================================== */
-:root {
-  /* ===== Colores principales ===== */
-  --color-bg: #ffffff; /* Fondo claro */
-  --color-text: #1a1a1a; /* Texto principal */
-  --color-accent: #6ca0f5; /* Azul pastel kawaii */
-  --color-accent-dark: #4a7ac7; /* Azul más oscuro para hover */
-  --color-card: #f7f9fc; /* Fondo de cards */
-  --color-muted: #cbd5e1; /* Texto secundario */
-
-  /* ===== Tipografía ===== */
-  --font-main: "Montserrat", sans-serif;
-  --fs-h1: clamp(2rem, 5vw, 3.5rem);
-  --fs-h2: clamp(1.5rem, 4vw, 2.5rem);
-  --fs-p: clamp(1rem, 2.2vw, 1.2rem);
-
-  /* ===== Espaciados ===== */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-  --max-width: 1200px;
-
-  /* ===== Animaciones ===== */
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --duration-normal: 0.6s;
-}
-
-/* ===== Modo oscuro ===== */
+/* Colores pastel y modo oscuro */
 :root.dark {
-  --color-bg: #0f172a;
-  --color-text: #f8fafc;
-  --color-accent: #60a5fa;
-  --color-accent-dark: #2563eb;
-  --color-card: #1e293b;
-  --color-muted: #94a3b8;
+  --color-bg: #1f2937;
+  --color-text: #e0e7ff;
+  --color-accent: #93c5fd;
+  --color-accent-dark: #c8b6ff;
 }

@@ -1,0 +1,129 @@
+/* --------------------------------------------------------------------------
+   Layout & Hero Animations
+-------------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(135deg, #e0f7ff, #f5e0ff);
+  transition: background 3s ease-in-out;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #f0f0ff;
+}
+
+/* Letras animadas al lateral */
+.hero-letters {
+  position: absolute;
+  left: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 3;
+}
+
+.hero-letters span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #c0d8ff;
+  animation: floatLetters 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatLetters {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Nubes flotantes */
+.floating-clouds {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cloud {
+  position: absolute;
+  width: 200px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  filter: blur(6px);
+  animation: floatClouds linear infinite;
+}
+
+.cloud1 {
+  top: 10%;
+  left: -250px;
+  animation-duration: 60s;
+}
+.cloud2 {
+  top: 30%;
+  left: -300px;
+  animation-duration: 90s;
+}
+.cloud3 {
+  top: 50%;
+  left: -200px;
+  animation-duration: 75s;
+}
+
+@keyframes floatClouds {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(130vw);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .hero-letters {
+    display: none;
+  }
+}
