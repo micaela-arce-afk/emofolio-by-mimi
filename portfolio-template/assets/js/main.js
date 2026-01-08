@@ -1,6 +1,6 @@
 "use strict";
 
-// Dark Mode Toggle
+// Dark Mode Toggle con transición suave
 const darkBtn = document.getElementById("darkModeBtn");
 darkBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");

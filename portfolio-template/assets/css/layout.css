@@ -34,6 +34,7 @@
   display: flex;
   width: 100%;
   min-height: 80vh;
+  background: linear-gradient(135deg, #fdfbff 0%, #e0c3fc 50%, #a8edea 100%);
 }
 
 /* Sidebar vertical 1/4 */
@@ -43,29 +44,36 @@
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  gap: 2rem;
+  gap: 1rem;
   position: relative;
+  color: var(--text-color);
 }
 
-/* Nombre vertical gigante */
+/* Nombres verticales */
 .name-vertical {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-size: 5rem;
   font-weight: 900;
-  color: var(--primary-color);
-  letter-spacing: 0.2rem;
   text-align: center;
+  letter-spacing: 0.2rem;
+}
+
+.name-vertical.angel {
+  font-size: 4rem;
+}
+
+.name-vertical.mikan {
+  font-size: 7rem;
 }
 
 /* Carrusel dentro del side */
 .carousel-btn.next {
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   border: none;
   border-radius: 8px;
   background-color: var(--primary-color);
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -74,9 +82,9 @@
   background-color: var(--accent-color);
 }
 
+/* Profesiones */
 .professions {
   font-size: 1rem;
-  color: var(--accent-color);
   text-align: center;
 }
 
@@ -115,7 +123,8 @@
   .carousel-container {
     width: 100%;
   }
-  .name-vertical {
+  .name-vertical.angel,
+  .name-vertical.mikan {
     writing-mode: horizontal-tb;
     font-size: 3rem;
   }
