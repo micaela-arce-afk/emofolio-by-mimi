@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angel Mikan - Portfolio</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="nav-top">
+      <div class="logo">Mikan</div>
+      <ul class="nav-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Works</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <button id="darkModeBtn" class="btn-dark">Dark Mode</button>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+      <!-- Carrusel de fondo -->
+      <div class="hero-carousel">
+        <img
+          src="assets/images/sample image.png"
+          class="carousel-item active"
+        />
+        <img src="assets/images/sample image 2.png" class="carousel-item" />
+        <img src="assets/images/sample image 3.png" class="carousel-item" />
+      </div>
+
+      <!-- Contenido del hero -->
+      <div class="hero-center">
+        <div class="name-block">
+          <div class="name-item mikan animated">MIKAN</div>
+          <div class="professions animated">
+            <div class="name-item professions-line1">
+              Illustrator · Rigger · Graphic & Editorial Designer
+            </div>
+            <div class="name-item professions-line2">
+              Frontend & UX/UI Designer · 3D Modeler
+            </div>
+          </div>
+        </div>
+
+        <!-- Flechas de navegación -->
+        <button class="carousel-arrow left" id="prevBtn">&#10094;</button>
+        <button class="carousel-arrow right" id="nextBtn">&#10095;</button>
+      </div>
+    </header>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
