@@ -1,129 +1,97 @@
-/* --------------------------------------------------------------------------
-   Layout & Hero Animations
--------------------------------------------------------------------------- */
-
-.hero {
-  position: relative;
-  min-height: 100vh;
+.d-flex {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  text-align: center;
-  background: linear-gradient(135deg, #e0f7ff, #f5e0ff);
-  transition: background 3s ease-in-out;
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.7;
-  transition: opacity 1.5s ease-in-out;
+.sidebar {
+  width: 220px;
+  background-color: var(--sidebar-color);
+  height: 100vh;
+  position: fixed;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  color: #ffffff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
-.hero p {
+.subtitle {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.nav-links {
+  list-style: none;
+  flex-grow: 1;
+}
+
+.nav-links li {
+  margin-bottom: 1rem;
+}
+
+.nav-links li a {
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: var(--primary-color);
+}
+
+.social a {
+  margin-right: 0.5rem;
   font-size: 1.2rem;
-  color: #f0f0ff;
 }
 
-/* Letras animadas al lateral */
-.hero-letters {
-  position: absolute;
-  left: 2%;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
+main {
+  margin-left: 220px;
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-  z-index: 3;
 }
 
-.hero-letters span {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #c0d8ff;
-  animation: floatLetters 4s ease-in-out infinite alternate;
+.work-item img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-@keyframes floatLetters {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+.work-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Nubes flotantes */
-.floating-clouds {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
+.work-item.tall img {
+  height: 350px;
+  object-fit: cover;
 }
 
-.cloud {
-  position: absolute;
-  width: 200px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  filter: blur(6px);
-  animation: floatClouds linear infinite;
+.work-item.wide img {
+  grid-column: span 2;
+  height: 250px;
+  object-fit: cover;
 }
 
-.cloud1 {
-  top: 10%;
-  left: -250px;
-  animation-duration: 60s;
-}
-.cloud2 {
-  top: 30%;
-  left: -300px;
-  animation-duration: 90s;
-}
-.cloud3 {
-  top: 50%;
-  left: -200px;
-  animation-duration: 75s;
-}
-
-@keyframes floatClouds {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(130vw);
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-  .hero-letters {
-    display: none;
-  }
+.contact-form {
+  max-width: 500px;
 }

@@ -1,18 +1,3 @@
-:root {
-  --color-bg: #ffffff;
-  --color-text: #1a1a1a;
-  --color-accent: #a8cfff; /* azul clarito */
-  --color-accent-dark: #c8b6ff; /* lila clarito */
-  --font-main: "Inter", sans-serif;
-
-  --fs-h1: clamp(2rem, 5vw, 3.5rem);
-  --fs-h2: clamp(1.5rem, 4vw, 2.5rem);
-  --fs-p: clamp(1rem, 2.2vw, 1.2rem);
-
-  --max-width: 1200px;
-}
-
-/* RESET LIGERO */
 * {
   margin: 0;
   padding: 0;
@@ -20,116 +5,18 @@
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-main);
-  font-size: var(--fs-p);
-  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* CONTENEDORES */
-.wrapper {
-  width: 90%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 2rem 0;
-}
-
-/* NAVBAR */
-header {
-  width: 100%;
-  padding: 1rem 0;
-  border-bottom: 1px solid #eee;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav .logo {
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-nav ul {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-}
-
-nav a {
+a {
   text-decoration: none;
-  color: var(--color-text);
-  font-weight: 500;
+  color: inherit;
 }
 
-nav a:hover {
-  color: var(--color-accent);
-}
-
-/* MENÚ MÓVIL */
-.burger {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.burger span {
-  width: 25px;
-  height: 3px;
-  background: var(--color-text);
-  transition: 0.3s;
-}
-
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 6rem 0;
-}
-
-.hero h1 {
-  font-size: var(--fs-h1);
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  max-width: 600px;
-  margin: 0 auto;
-  opacity: 0.8;
-}
-
-/* FOOTER */
-footer {
-  padding: 2rem 0;
-  text-align: center;
-  opacity: 0.7;
-  font-size: 0.9rem;
-}
-
-/* RESPONSIVE NAV */
-@media (max-width: 800px) {
-  nav ul {
-    position: absolute;
-    right: 0;
-    top: 70px;
-    background: var(--color-bg);
-    flex-direction: column;
-    width: 60%;
-    padding: 1.5rem;
-    gap: 1rem;
-    border-left: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    display: none;
-  }
-
-  nav ul.open {
-    display: flex;
-  }
-
-  .burger {
-    display: flex;
-  }
+h1,
+h2 {
+  font-weight: 600;
 }

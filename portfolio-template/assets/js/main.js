@@ -1,13 +1,28 @@
-const burger = document.querySelector(".burger");
-const navMenu = document.querySelector("nav ul");
-
-burger.addEventListener("click", () => {
-  navMenu.classList.toggle("open");
+// Dark Mode toggle
+const darkBtn = document.getElementById("darkModeBtn");
+darkBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
 });
 
-/* Botón modo oscuro */
-const toggleDark = document.querySelector("#toggle-dark");
+// Animación de scroll simple (fade in)
+const faders = document.querySelectorAll(".animate-fade");
+const appearOptions = {
+  threshold: 0.1,
+};
 
-toggleDark.addEventListener("click", () => {
-  document.documentElement.classList.toggle("dark");
+const appearOnScroll = new IntersectionObserver(function (
+  entries,
+  appearOnScroll
+) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    entry.target.style.opacity = 1;
+    entry.target.style.transform = "translateY(0)";
+    appearOnScroll.unobserve(entry.target);
+  });
+},
+appearOptions);
+
+faders.forEach((fader) => {
+  appearOnScroll.observe(fader);
 });

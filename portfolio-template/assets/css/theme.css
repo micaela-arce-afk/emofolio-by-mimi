@@ -1,7 +1,13 @@
-/* Colores pastel y modo oscuro */
-:root.dark {
-  --color-bg: #1f2937;
-  --color-text: #e0e7ff;
-  --color-accent: #93c5fd;
-  --color-accent-dark: #c8b6ff;
+:root {
+  --bg-color: #f8faff;
+  --sidebar-color: #e1e6ff;
+  --primary-color: #cdb4ff;
+  --text-color: #333;
+}
+
+body.dark-mode {
+  --bg-color: #1c1c1c;
+  --sidebar-color: #2c2c2c;
+  --primary-color: #6c63ff;
+  --text-color: #f5f5f5;
 }
