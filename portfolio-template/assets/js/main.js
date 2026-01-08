@@ -1,20 +1,13 @@
-"use strict";
+const darkModeBtn = document.querySelector(".btn-dark");
 
-// Dark Mode Toggle
-const darkBtn = document.getElementById("darkModeBtn");
-darkBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
+darkModeBtn.addEventListener("click", () => {
+  if (darkModeBtn.textContent === "Dark Mode") {
+    darkModeBtn.textContent = "Light Mode";
+    document.body.style.background = "#222"; // fondo oscuro
+    document.body.style.color = "#fff"; // texto claro
+  } else {
+    darkModeBtn.textContent = "Dark Mode";
+    document.body.style.background = "#f5f5f5"; // fondo claro
+    document.body.style.color = "#000"; // texto oscuro
+  }
 });
-
-// Carrusel automático
-const carouselItems = document.querySelectorAll(".carousel-item");
-let currentIndex = 0;
-
-function showNext() {
-  carouselItems[currentIndex].classList.remove("active");
-  currentIndex = (currentIndex + 1) % carouselItems.length;
-  carouselItems[currentIndex].classList.add("active");
-}
-
-// Cambio automático cada 3 segundos
-setInterval(showNext, 3000);

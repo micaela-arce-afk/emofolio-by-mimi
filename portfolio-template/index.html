@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Angel Mikan - Portfolio</title>
+    <title>Angel Mikan</title>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"
       rel="stylesheet"
@@ -11,77 +12,20 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!-- Hero Section -->
-    <header class="hero">
-      <!-- Menu superior -->
-      <nav class="nav-top">
-        <div class="logo">Mikan</div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#works">Works</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button id="darkModeBtn" class="btn-dark">Dark Mode</button>
-      </nav>
+    <!-- ===== NAV ===== -->
+    <nav class="nav-top">
+      <div class="logo">Mikan</div>
 
-      <div class="hero-main">
-        <!-- Sidebar lateral -->
-        <div class="hero-side">
-          <div class="name-block">
-            <div class="name-item angel">ANGEL</div>
-            <div class="name-item mikan">MIKAN</div>
-            <div class="name-item professions-line1">
-              Illustrator · Rigger · Graphic & Editorial Designer
-            </div>
-            <div class="name-item professions-line2">
-              Frontend & UX/UI Designer · 3D Modeler
-            </div>
-          </div>
-        </div>
+      <ul class="nav-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Works</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
 
-        <!-- Carrusel derecho -->
-        <div class="carousel-container">
-          <div class="carousel">
-            <img
-              src="assets/images/work1.jpg"
-              alt="Work 1"
-              class="carousel-item active"
-            />
-            <img
-              src="assets/images/work2.jpg"
-              alt="Work 2"
-              class="carousel-item"
-            />
-            <img
-              src="assets/images/work3.jpg"
-              alt="Work 3"
-              class="carousel-item"
-            />
-          </div>
-        </div>
-      </div>
-    </header>
+      <button class="btn-dark">Dark Mode</button>
+    </nav>
 
-    <main>
-      <section id="about">
-        <h2>About</h2>
-        <p>Sobre mí...</p>
-      </section>
-      <section id="works">
-        <h2>Works</h2>
-        <p>Portfolio completo.</p>
-      </section>
-      <section id="contact">
-        <h2>Contact</h2>
-        <form class="contact-form">
-          <input type="text" placeholder="Nombre" class="form-control" />
-          <input type="email" placeholder="Email" class="form-control" />
-          <textarea placeholder="Mensaje" class="form-control"></textarea>
-          <button class="btn">Enviar</button>
-        </form>
-      </section>
-    </main>
-
+    <!-- ===== LINK AL JS ===== -->
     <script src="assets/js/main.js"></script>
   </body>
 </html>
