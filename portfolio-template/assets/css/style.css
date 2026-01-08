@@ -48,13 +48,14 @@ body.dark-mode {
   );
 }
 
-/* Menu superior */
+/* ===== MENU SUPERIOR ===== */
 .nav-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background-color: var(--menu-bg);
+  z-index: 10;
 }
 
 .nav-top .logo {
@@ -72,6 +73,7 @@ body.dark-mode {
 .nav-links li a {
   color: var(--menu-text);
   font-weight: 700;
+  text-decoration: none;
   transition: color 0.3s;
 }
 
@@ -79,30 +81,31 @@ body.dark-mode {
   color: var(--primary-color-light);
 }
 
-/* Hero Section */
+/* ===== HERO SECTION ===== */
 .hero-main {
   display: flex;
-  min-height: 80vh;
+  min-height: calc(100vh - 80px); /* resta el menú */
 }
 
-/* Sidebar lateral pegado */
+/* Sidebar izquierda */
 .hero-side {
   width: 25%;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Nombre apilado, alineado a la derecha dentro del bloque */
+/* BLOQUE ROTADO (FIX REAL) */
 .name-block {
-  position: absolute;
-  left: 0; /* pegado al borde izquierdo */
-  top: 50%;
-  transform: translateY(-50%) rotate(-90deg);
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* alineado a la derecha dentro del bloque */
-  gap: 0.3rem;
+  gap: 0.15rem;
+  transform: rotate(-90deg) translateY(-50%);
+  transform-origin: center;
+  align-items: flex-end;
 }
 
+/* Texto */
 .name-item {
   font-weight: 900;
   white-space: nowrap;
@@ -114,20 +117,21 @@ body.dark-mode {
 
 .name-item.mikan {
   font-size: 7rem;
+  line-height: 0.9;
 }
 
 .name-item.professions-line1,
 .name-item.professions-line2 {
   font-size: 1.4rem;
   font-weight: 700;
+  opacity: 0.85;
 }
 
-/* Carrusel derecho sin margen, ocupa todo */
+/* ===== CARRUSEL ===== */
 .carousel-container {
   width: 75%;
   height: 100%;
   display: flex;
-  align-items: stretch;
   justify-content: center;
   overflow: hidden;
 }
@@ -136,7 +140,6 @@ body.dark-mode {
   width: 100%;
   height: 100%;
   display: flex;
-  overflow: hidden;
   position: relative;
 }
 
@@ -149,4 +152,24 @@ body.dark-mode {
 
 .carousel-item.active {
   display: block;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .hero-main {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .hero-side,
+  .carousel-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .name-block {
+    transform: rotate(0deg);
+    align-items: center;
+    gap: 0.3rem;
+  }
 }
