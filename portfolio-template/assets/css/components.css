@@ -10,7 +10,7 @@
 }
 
 .btn:hover {
-  background-color: #b79aff;
+  background-color: var(--accent-color);
 }
 
 .form-control {
@@ -19,22 +19,4 @@
   margin-bottom: 1rem;
   border-radius: 8px;
   border: 1px solid #ccc;
-}
-
-/* Animaciones */
-.animate-fade {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s forwards;
-}
-
-.animate-fade.delay-1 {
-  animation-delay: 0.3s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

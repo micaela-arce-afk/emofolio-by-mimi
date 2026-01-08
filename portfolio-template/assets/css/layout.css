@@ -1,41 +1,27 @@
-.d-flex {
+/* Menu superior */
+.nav-top {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--menu-bg);
 }
 
-.sidebar {
-  width: 220px;
-  background-color: var(--sidebar-color);
-  height: 100vh;
-  position: fixed;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.logo {
+.nav-top .logo {
+  font-weight: 900;
   font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.subtitle {
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
-  line-height: 1.4;
+  color: var(--menu-text);
 }
 
 .nav-links {
   list-style: none;
-  flex-grow: 1;
-}
-
-.nav-links li {
-  margin-bottom: 1rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .nav-links li a {
-  color: var(--text-color);
-  font-weight: 500;
+  color: var(--menu-text);
+  font-weight: 700;
   transition: color 0.3s;
 }
 
@@ -43,55 +29,94 @@
   color: var(--primary-color);
 }
 
-.social a {
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
+/* Hero main 4 columnas */
+.hero-main {
+  display: flex;
+  width: 100%;
+  min-height: 80vh;
 }
 
-main {
-  margin-left: 220px;
+/* Sidebar vertical 1/4 */
+.hero-side {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 2rem;
-  flex-grow: 1;
+  gap: 2rem;
+  position: relative;
 }
 
-.hero-section {
+/* Nombre vertical gigante */
+.name-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  letter-spacing: 0.2rem;
   text-align: center;
-  margin-bottom: 3rem;
 }
 
-.section-title {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+/* Carrusel dentro del side */
+.carousel-btn.next {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+.carousel-btn.next:hover {
+  background-color: var(--accent-color);
 }
 
-.work-item img {
+.professions {
+  font-size: 1rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+/* Carrusel 3/4 derecho */
+.carousel-container {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-item {
+  display: none;
   width: 100%;
   border-radius: 12px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.work-item img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+.carousel-item.active {
+  display: block;
 }
 
-.work-item.tall img {
-  height: 350px;
-  object-fit: cover;
-}
-
-.work-item.wide img {
-  grid-column: span 2;
-  height: 250px;
-  object-fit: cover;
-}
-
-.contact-form {
-  max-width: 500px;
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-main {
+    flex-direction: column;
+  }
+  .hero-side,
+  .carousel-container {
+    width: 100%;
+  }
+  .name-vertical {
+    writing-mode: horizontal-tb;
+    font-size: 3rem;
+  }
 }

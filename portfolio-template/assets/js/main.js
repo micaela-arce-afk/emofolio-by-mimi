@@ -1,28 +1,18 @@
-// Dark Mode toggle
+"use strict";
+
+// Dark Mode Toggle
 const darkBtn = document.getElementById("darkModeBtn");
 darkBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 });
 
-// Animación de scroll simple (fade in)
-const faders = document.querySelectorAll(".animate-fade");
-const appearOptions = {
-  threshold: 0.1,
-};
+// Carrusel
+const carouselItems = document.querySelectorAll(".carousel-item");
+const nextBtn = document.querySelector(".carousel-btn.next");
+let currentIndex = 0;
 
-const appearOnScroll = new IntersectionObserver(function (
-  entries,
-  appearOnScroll
-) {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    entry.target.style.opacity = 1;
-    entry.target.style.transform = "translateY(0)";
-    appearOnScroll.unobserve(entry.target);
-  });
-},
-appearOptions);
-
-faders.forEach((fader) => {
-  appearOnScroll.observe(fader);
+nextBtn.addEventListener("click", () => {
+  carouselItems[currentIndex].classList.remove("active");
+  currentIndex = (currentIndex + 1) % carouselItems.length;
+  carouselItems[currentIndex].classList.add("active");
 });

@@ -1,3 +1,4 @@
+/* Reset y tipografía */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +17,19 @@ a {
   color: inherit;
 }
 
-h1,
-h2 {
-  font-weight: 600;
+/* Variables de tema */
+:root {
+  --bg-color: #f8faff;
+  --text-color: #333;
+  --primary-color: #cdb4ff;
+  --accent-color: #b2d8f7;
+  --menu-bg: #000;
+  --menu-text: #fff;
+}
+
+body.dark-mode {
+  --bg-color: #1c1c1c;
+  --text-color: #f5f5f5;
+  --primary-color: #6c63ff;
+  --accent-color: #3b3b6e;
 }
