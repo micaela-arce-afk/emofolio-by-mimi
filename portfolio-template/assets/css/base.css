@@ -1,21 +1,9 @@
-/* VARIABLES */
-:root {
-  --color-bg: #ffffff;
-  --color-text: #1a1a1a;
-  --color-accent: #ff6ca8;
-  --color-accent-dark: #d9558a;
+/* ==================================================
+   BASE CSS 🌸
+   Reset + contenedores + navbar + hero + footer
+================================================== */
 
-  --font-main: "Inter", sans-serif;
-
-  /* Tipografía fluida */
-  --fs-h1: clamp(2rem, 5vw, 3.5rem);
-  --fs-h2: clamp(1.5rem, 4vw, 2.5rem);
-  --fs-p: clamp(1rem, 2.2vw, 1.2rem);
-
-  --max-width: 1200px;
-}
-
-/* RESET LIGERO */
+/* ===== RESET LIGERO ===== */
 * {
   margin: 0;
   padding: 0;
@@ -23,26 +11,31 @@
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-text);
   font-family: var(--font-main);
   font-size: var(--fs-p);
+  color: var(--color-text);
+  background: var(--color-bg);
   line-height: 1.6;
 }
 
-/* CONTENEDORES */
+/* ===== CONTENEDORES ===== */
 .wrapper {
   width: 90%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: var(--space-lg) 0;
 }
 
-/* NAVBAR */
+/* ===== NAVBAR ===== */
 header {
   width: 100%;
-  padding: 1rem 0;
-  border-bottom: 1px solid #eee;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-muted);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--color-bg);
+  z-index: 100;
 }
 
 nav {
@@ -58,7 +51,7 @@ nav .logo {
 
 nav ul {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--space-lg);
   list-style: none;
 }
 
@@ -72,12 +65,12 @@ nav a:hover {
   color: var(--color-accent);
 }
 
-/* MENÚ MÓVIL */
+/* ===== MENÚ MÓVIL ===== */
 .burger {
   display: none;
-  cursor: pointer;
   flex-direction: column;
   gap: 4px;
+  cursor: pointer;
 }
 
 .burger span {
@@ -87,55 +80,36 @@ nav a:hover {
   transition: 0.3s;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 6rem 0;
+  padding-top: var(--space-xl); /* espacio para navbar */
 }
 
 .hero h1 {
   font-size: var(--fs-h1);
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-sm);
 }
 
 .hero p {
-  max-width: 600px;
-  margin: 0 auto;
+  font-size: var(--fs-h2);
   opacity: 0.8;
 }
 
-/* GALERÍA GENERAL */
-.grid-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.card {
-  background: #fafafa;
-  padding: 1rem;
-  border-radius: 12px;
-  transition: 0.2s ease;
-}
-
-.card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
-  padding: 2rem 0;
   text-align: center;
+  padding: var(--space-lg) 0;
   opacity: 0.7;
   font-size: 0.9rem;
 }
 
-/* RESPONSIVE NAV */
+/* ===== RESPONSIVE NAV ===== */
 @media (max-width: 800px) {
   nav ul {
     position: absolute;
@@ -144,10 +118,10 @@ footer {
     background: var(--color-bg);
     flex-direction: column;
     width: 60%;
-    padding: 1.5rem;
-    gap: 1rem;
-    border-left: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    padding: var(--space-md);
+    gap: var(--space-sm);
+    border-left: 1px solid var(--color-muted);
+    border-bottom: 1px solid var(--color-muted);
     display: none;
   }
 

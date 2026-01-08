@@ -1,36 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mimi Portfolio</title>
-    <link rel="stylesheet" href="css/base.css" />
-  </head>
-  <body>
-    <!-- NAVBAR -->
-    <header>
-      <div class="wrapper">
-        <nav>
-          <div class="logo">Mimi Portfolio</div>
+    <title>Mikan Portfolio 𐔌՞</title>
 
-          <div class="burger"><span></span><span></span><span></span></div>
-        </nav>
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+  </head>
+  <body class="light">
+    <!-- NAVBAR ⩊ ◜.ᐟ -->
+    <header class="header">
+      <div class="container nav-container">
+        <!-- Logo ꒰ ᧔ෆ᧓ ꒱ -->
+        <div class="nav-logo">Mikan Portfolio ꒰ ᧔ෆ᧓ ꒱</div>
+
+        <!-- Links 𐔌՞ -->
+        <ul class="nav-links">
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+
+        <!-- Botones Móviles y Dark Mode 𐔌՞ -->
+        <button id="dark-toggle" class="btn">Modo Oscuro ꒰ ᧔ෆ᧓ ꒱</button>
+        <div class="nav-actions">
+          <button class="dark-toggle" aria-label="Toggle Dark Mode">𐑼⋆</button>
+          <div class="burger" aria-label="Abrir menú móvil">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
       </div>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO 𐔌՞ -->
     <main>
-      <section class="hero wrapper">
-        <h1>Hi, I'm Mimi</h1>
-        <p>Illustrator · Comic Artist · Graphic & Editorial Designer</p>
+      <section id="hero" class="hero">
+        <!-- Fondo Parallax ܸ.ˬ.ܸ՞𐦯 -->
+        <div class="hero-bg"></div>
+
+        <div class="hero-content">
+          <h1 class="hero-title">¡Hola, soy Mikan! ܸ.ˬ.ܸ՞𐦯</h1>
+          <p class="hero-subtitle">
+            Ilustradora · Artista de Cómic · Diseñadora Gráfica & Editorial 𝜗ৎ
+          </p>
+          <a href="#projects" class="btn">Ver Proyectos ⏔⏔⏔</a>
+
+          <!-- Indicador Scroll ⩊ ◜.ᐟ -->
+          <div class="scroll-indicator">
+            <span>Scroll ꒰ঌ ໒꒱</span>
+            <div class="scroll-arrow"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT ݁ ˖Ი𐑼⋆ -->
+      <section id="about" class="about section">
+        <h2 class="section-title">Sobre mí ݁ ˖Ი𐑼⋆</h2>
+        <div class="about-grid">
+          <div class="about-text animate-on-scroll">
+            <p>
+              ¡Hola! Soy Mikan, me encanta crear ilustraciones angelicales y
+              cómics llenos de vida ⏔⏔⏔
+            </p>
+            <p>
+              Trabajo combinando arte digital y diseño editorial para contar
+              historias únicas ◝ ⩊ ◜.ᐟ
+            </p>
+          </div>
+          <div class="about-image animate-on-scroll">
+            <img src="assets/img/profile.jpg" alt="Mikan ilustradora" />
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS 𐔌՞ -->
+      <section id="skills" class="skills section">
+        <h2 class="section-title">Skills 𐔌՞</h2>
+        <div class="skills-grid" data-reveal-stagger>
+          <div class="skill-card">
+            <span class="skill-icon">⩊ ◜.ᐟ</span>
+            <h3>Ilustración Digital</h3>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--fill: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">𐑼⋆</span>
+            <h3>Diseño Editorial</h3>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--fill: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">(ᵕ—ᴗ—)</span>
+            <h3>HTML/CSS/JS</h3>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--fill: 80%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-icon">⏔⏔⏔</span>
+            <h3>Creatividad & UX</h3>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--fill: 95%"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS 𝜗ৎ -->
+      <section id="projects" class="projects section">
+        <h2 class="section-title">Proyectos 𝜗ৎ</h2>
+        <div class="projects-grid" data-reveal-stagger>
+          <div class="project-card">
+            <div class="project-image">
+              <img src="assets/img/project1.jpg" alt="Proyecto 1" />
+            </div>
+            <div class="project-content">
+              <h3>Comic Angelical</h3>
+              <p>
+                Historias mágicas ilustradas con colores suaves y diseño limpio
+                𐔌՞
+              </p>
+              <div class="project-tags">
+                <span>Ilustración 𐑼⋆</span>
+                <span>Cómic ◝ ⩊ ◜.ᐟ</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img src="assets/img/project2.jpg" alt="Proyecto 2" />
+            </div>
+            <div class="project-content">
+              <h3>Revista Editorial</h3>
+              <p>
+                Diseño editorial para historias y contenidos visuales claros y
+                armoniosos 𝜗ৎ
+              </p>
+              <div class="project-tags">
+                <span>Diseño ꒰ ᧔ෆ᧓ ꒱</span>
+                <span>Editorial 𐔌՞</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT ⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹ -->
+      <section id="contact" class="contact section">
+        <h2 class="section-title">Contacto ⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹</h2>
+        <p class="contact-content">
+          Si quieres trabajar conmigo o preguntar algo, escríbeme ⏔⏔⏔ ꒰ঌ ໒꒱
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Twitter">𐔌՞</a>
+          <a href="#" aria-label="Instagram">ܸ.ˬ.ܸ՞𐦯</a>
+          <a href="#" aria-label="LinkedIn">(ᵕ—ᴗ—)</a>
+        </div>
       </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer>
-      <p>© 2025 Mimi – All rights reserved</p>
+    <!-- FOOTER ݁ ˖Ი𐑼⋆ -->
+    <footer class="footer">
+      <p>© 2025 Mikan – Todos los derechos reservados ݁ ˖Ი𐑼⋆</p>
+      <a href="#hero" class="back-to-top">⏔⏔⏔ Volver arriba</a>
     </footer>
 
+    <!-- JS -->
     <script src="js/main.js"></script>
   </body>
 </html>
