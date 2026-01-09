@@ -28,6 +28,7 @@ body {
   color: var(--color-text);
   font-weight: 900;
   font-size: 2.2rem;
+  cursor: pointer;
 }
 .nav-links {
   list-style: none;
@@ -365,23 +366,28 @@ body {
   color: #fff;
   position: relative;
 }
+
+/* BOTÓN BACK TO TOP SIEMPRE VISIBLE */
 #pageTopBtn {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-  padding: 0.5rem 1rem;
+  display: block; /* siempre visible */
+  position: fixed; /* siempre en pantalla */
+  bottom: 30px;
+  right: 30px;
+  padding: 0.7rem 1.2rem;
   cursor: pointer;
   background: var(--color-accent);
   border: none;
   color: #000;
   font-weight: 700;
   border-radius: 6px;
-  transition: 0.3s;
-  z-index: 10;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  opacity: 0.8;
 }
 #pageTopBtn:hover {
   background: var(--color-accent-dark);
   color: #fff;
+  opacity: 1;
 }
 
 /* RESPONSIVE */

@@ -61,29 +61,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// BACK TO TOP
-const pageTopBtn = document.getElementById("pageTopBtn");
-if (pageTopBtn) {
-  pageTopBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
-
-// CLICK LOGO NAV
-const navLogo = document.querySelector(".logo");
-if (navLogo) {
-  navLogo.addEventListener("click", (e) => {
-    e.preventDefault();
-    // Opción 1: recargar la página
-    window.location.href = window.location.pathname;
-
-    // Opción 2: scroll suave al Hero (descomenta si prefieres esto)
-    // const hero = document.querySelector(".hero");
-    // hero.scrollIntoView({ behavior: "smooth" });
-  });
-}
-
 // ESTRELLAS OPCIONALES EN ABOUT
 const aboutSection = document.querySelector(".about-section");
 if (aboutSection) {
@@ -105,4 +82,24 @@ if (aboutSection) {
     star.style.animationDelay = Math.random() * 2 + "s";
     starsContainer.appendChild(star);
   }
+}
+
+// BOTÓN BACK TO TOP SIEMPRE VISIBLE
+const pageTopBtn = document.getElementById("pageTopBtn");
+if (pageTopBtn) {
+  pageTopBtn.addEventListener("click", () => {
+    // Scroll suave
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Garantiza compatibilidad con todos los navegadores
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+}
+
+// CLICK LOGO NAV
+const navLogo = document.querySelector(".logo");
+if (navLogo) {
+  navLogo.addEventListener("click", () => {
+    window.location.reload();
+  });
 }
