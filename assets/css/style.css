@@ -243,6 +243,7 @@ body {
 /* ABOUT */
 .about-section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -250,13 +251,42 @@ body {
   color: #fff;
   padding: 4rem 2rem;
   overflow: hidden;
+  position: relative;
 }
+
+/* Separador ABOUT tipo línea larga */
+.about-separator-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 3rem;
+  gap: 1rem;
+}
+.about-separator-container .line {
+  flex: 1;
+  height: 2px;
+  background: var(--color-accent);
+  opacity: 0.5;
+}
+.about-separator-container .about-separator {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--color-accent);
+  text-align: center;
+  letter-spacing: 6px;
+  white-space: nowrap;
+}
+
+/* INNER ABOUT */
 .about-inner {
   display: flex;
   gap: 3rem;
   max-width: 1200px;
   width: 100%;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 .about-left {
   flex: 1;
@@ -311,35 +341,47 @@ body {
   transform: scale(1.3);
 }
 
+/* ESTRELLAS OPCIONALES EN ABOUT */
+.about-stars {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.about-stars span {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #fff;
+  animation: starFloat 2s linear infinite;
+}
+
 /* FOOTER */
 .footer {
   padding: 2rem;
   text-align: center;
   background: #000;
   color: #fff;
+  position: relative;
 }
-
-/* BOTÓN BACK TO TOP */
 #pageTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  padding: 0.7rem 1.2rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
   background: var(--color-accent);
+  border: none;
   color: #000;
   font-weight: 700;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  z-index: 9999; /* encima de todo */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  display: none; /* empieza oculto hasta que desaparezca preloader */
+  border-radius: 6px;
+  transition: 0.3s;
+  z-index: 10;
 }
 #pageTopBtn:hover {
   background: var(--color-accent-dark);
   color: #fff;
-  transform: scale(1.1);
 }
 
 /* RESPONSIVE */
