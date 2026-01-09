@@ -1,0 +1,12 @@
+/* Variables y tokens de diseño */
+:root {
+  --color-bg: #111;
+  --color-accent: #7dd2f5;
+  --color-accent-dark: #1a2a40;
+  --color-text: #ffffff;
+  --font-primary: "Poppins", sans-serif;
+  --font-size-h1: 6rem;
+  --font-size-p: 1.3rem;
+  --nav-height: 70px;
+  --carousel-arrow-size: 50px;
+}

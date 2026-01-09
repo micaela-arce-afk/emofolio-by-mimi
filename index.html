@@ -5,13 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Angel Mikan - Portfolio</title>
 
+    <!-- Fuentes -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/theme.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/preloader.css" />
   </head>
   <body>
+    <!-- PRELOADER -->
+    <div id="preloader">
+      <div class="preloader-stars"></div>
+      <div class="preloader-content">
+        <div class="preloader-logo">ANGEL MIKAN</div>
+      </div>
+    </div>
+
     <!-- NAV -->
     <nav class="nav-top">
       <div class="logo">Mikan</div>
@@ -20,26 +33,28 @@
         <li><a href="#">Works</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
-      <button id="darkModeBtn" class="btn-dark">Dark Mode</button>
     </nav>
 
     <!-- HERO -->
     <header class="hero">
-      <!-- Carrusel de fondo -->
       <div class="hero-carousel">
         <img src="assets/images/work1.png" class="carousel-item active" />
         <img src="assets/images/work2.png" class="carousel-item" />
         <img src="assets/images/work3.png" class="carousel-item" />
       </div>
-
-      <!-- Overlay oscuro para legibilidad -->
       <div class="hero-overlay"></div>
 
-      <!-- Contenido del hero -->
       <div class="hero-center">
         <div class="name-block">
-          <div class="name-item mikan animated">MIKAN</div>
-          <div class="professions animated">
+          <div class="name-item mikan">
+            <span>M</span><span>I</span><span>K</span><span>A</span
+            ><span>N</span>
+          </div>
+
+          <!-- Sparkles alrededor de MIKAN -->
+          <div class="sparkles"></div>
+
+          <div class="professions">
             <div class="name-item professions-line1">
               Illustrator · Rigger · Graphic & Editorial Designer
             </div>
@@ -49,7 +64,6 @@
           </div>
         </div>
 
-        <!-- Flechas debajo del texto -->
         <div class="carousel-controls">
           <button class="carousel-arrow left" id="prevBtn">&#10094;</button>
           <button class="carousel-arrow right" id="nextBtn">&#10095;</button>
@@ -57,6 +71,8 @@
       </div>
     </header>
 
+    <!-- JS -->
+    <script src="assets/js/preloader.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

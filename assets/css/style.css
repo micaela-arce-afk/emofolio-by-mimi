@@ -1,169 +1,232 @@
-/* ===== RESET ===== */
+/* RESET y HERO básicos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+html,
 body {
-  font-family: "Poppins", sans-serif;
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-primary);
+  background: var(--color-bg);
+  overflow-x: hidden;
 }
 
-/* ===== NAV ===== */
+/* NAV */
 .nav-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   background: #000;
   position: relative;
   z-index: 10;
 }
-
 .logo {
-  color: #fff;
+  color: var(--color-text);
   font-weight: 900;
-  font-size: 2rem;
-  transition: color 0.3s;
+  font-size: 2.2rem;
 }
-
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
 }
-
 .nav-links a {
-  color: #fff;
+  color: var(--color-text);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.2rem;
-  transition: color 0.3s;
+  font-weight: 700;
+  font-size: 1.4rem;
+  transition: all 0.3s;
+}
+.nav-links a:hover {
+  color: var(--color-accent);
+  text-shadow: 0 0 10px var(--color-accent), 0 0 20px rgba(125, 210, 245, 0.5);
 }
 
-.btn-dark {
-  background: #fff;
-  color: #000;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-}
-
-/* ===== HERO ===== */
+/* HERO y CARRUSEL */
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh; /* Ahora ocupa toda la pantalla */
+  height: 100vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-
-/* Fantasma detrás del contenido para controlar carrusel */
 .hero-carousel {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
+  overflow: hidden;
 }
-
 .carousel-item {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  top: 0;
+  left: 0;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1.2s ease-in-out;
 }
-
 .carousel-item.active {
   opacity: 1;
 }
-
-/* Overlay oscuro */
-.hero::before {
-  content: "";
+.hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
-/* ===== TEXTO ===== */
+/* NOMBRE MIKAN */
 .hero-center {
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.6rem;
 }
-
-/* Animación suave al cargar */
-.hero-center > * {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s forwards;
+.name-item.mikan {
+  display: flex;
+  justify-content: center;
+  gap: 0.1em;
+  font-size: var(--font-size-h1);
+  font-weight: 900;
+  animation: blockFloat 3s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
 }
-
-.hero-center > *:nth-child(1) {
+.name-item.mikan span {
+  display: inline-block;
+  color: var(--color-text);
+  text-shadow: 0 0 6px var(--color-accent), 0 0 12px rgba(125, 210, 245, 0.5),
+    0 0 20px rgba(125, 210, 245, 0.4);
+  animation: letterFloat 3s ease-in-out infinite alternate;
+}
+.name-item.mikan span:nth-child(1) {
+  animation-delay: 0s;
+}
+.name-item.mikan span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.name-item.mikan span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.name-item.mikan span:nth-child(4) {
   animation-delay: 0.3s;
 }
-
-.hero-center > *:nth-child(2) {
-  animation-delay: 0.6s;
+.name-item.mikan span:nth-child(5) {
+  animation-delay: 0.4s;
 }
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
+@keyframes letterFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
     transform: translateY(0);
   }
 }
-
-.name-item.mikan {
-  font-size: 6rem;
-  font-weight: 900;
-  color: #fff;
+@keyframes blockFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
+/* SPARKLES alrededor del MIKAN */
+.sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.sparkles span {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  animation: starFloat 2s linear infinite;
+}
+@keyframes starFloat {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -8px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* PROFESIONES flotando */
 .professions .name-item {
-  font-size: 1.3rem;
+  font-size: var(--font-size-p);
   font-weight: 600;
-  color: #fff;
+  color: var(--color-text);
   opacity: 0.85;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  animation: profFloat 3s ease-in-out infinite;
+}
+@keyframes profFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
-/* ===== FLECHAS ABAJO ===== */
+/* FLECHAS animadas */
 .carousel-controls {
   display: flex;
   gap: 1.5rem;
   margin-top: 2rem;
+  z-index: 2;
 }
-
 .carousel-arrow {
   font-size: 2rem;
-  background: rgba(255, 255, 255, 0.4);
-  color: #000;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--color-text);
   border: none;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: var(--carousel-arrow-size);
+  height: var(--carousel-arrow-size);
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: arrowFloat 2s ease-in-out infinite;
 }
-
 .carousel-arrow:hover {
-  background: rgba(255, 255, 255, 0.7);
-  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.2) rotate(10deg);
+}
+@keyframes arrowFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media (max-width: 992px) {
   .name-item.mikan {
     font-size: 4.5rem;
@@ -175,5 +238,11 @@ body {
     width: 35px;
     height: 35px;
     font-size: 1.5rem;
+  }
+  .nav-links {
+    gap: 2rem;
+  }
+  .nav-links a {
+    font-size: 1.2rem;
   }
 }

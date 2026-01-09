@@ -1,19 +1,6 @@
-// Light/Dark Mode
-const modeBtn = document.getElementById("darkModeBtn");
-let dark = false;
+"use strict";
 
-modeBtn.addEventListener("click", () => {
-  dark = !dark;
-  if (dark) {
-    document.body.style.background = "#111";
-    modeBtn.textContent = "Light Mode";
-  } else {
-    document.body.style.background = "#f5f5f5";
-    modeBtn.textContent = "Dark Mode";
-  }
-});
-
-// Carrusel funcional
+// Carrusel
 const slides = document.querySelectorAll(".carousel-item");
 const prev = document.getElementById("prevBtn");
 const next = document.getElementById("nextBtn");
@@ -33,8 +20,24 @@ next.addEventListener("click", () => {
   updateSlide();
 });
 
-// automatico cada 5s
+// Automático cada 5s
 setInterval(() => {
   idx = (idx + 1) % slides.length;
   updateSlide();
 }, 5000);
+
+// Sparkles dinámicos alrededor de MIKAN
+const sparklesContainer = document.querySelector(".sparkles");
+const sparkCount = 50;
+const w = window.innerWidth;
+const h = window.innerHeight;
+for (let i = 0; i < sparkCount; i++) {
+  const s = document.createElement("span");
+  s.style.left = Math.random() * w + "px";
+  s.style.top = Math.random() * h + "px";
+  s.style.width = s.style.height = Math.random() * 2 + 1 + "px";
+  s.style.opacity = Math.random();
+  s.style.animationDuration = 0.8 + Math.random() * 1 + "s"; // más rápido
+  s.style.animationDelay = Math.random() * 0.5 + "s";
+  sparklesContainer.appendChild(s);
+}
