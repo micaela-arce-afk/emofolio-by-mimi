@@ -318,20 +318,28 @@ body {
   background: #000;
   color: #fff;
 }
+
+/* BOTÓN BACK TO TOP */
 #pageTopBtn {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 0.7rem 1.2rem;
   background: var(--color-accent);
-  border: none;
   color: #000;
   font-weight: 700;
-  border-radius: 6px;
-  transition: 0.3s;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 9999; /* encima de todo */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  display: none; /* empieza oculto hasta que desaparezca preloader */
 }
 #pageTopBtn:hover {
   background: var(--color-accent-dark);
   color: #fff;
+  transform: scale(1.1);
 }
 
 /* RESPONSIVE */

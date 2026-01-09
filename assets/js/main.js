@@ -5,7 +5,6 @@ const slides = document.querySelectorAll(".carousel-item");
 const prev = document.getElementById("prevBtn");
 const next = document.getElementById("nextBtn");
 let idx = 0;
-
 function updateSlide() {
   slides.forEach((s, i) => {
     if (i === idx) {
@@ -17,7 +16,6 @@ function updateSlide() {
     }
   });
 }
-
 prev.addEventListener("click", () => {
   idx = (idx - 1 + slides.length) % slides.length;
   updateSlide();
@@ -30,13 +28,13 @@ setInterval(() => {
   idx = (idx + 1) % slides.length;
   updateSlide();
 }, 5000);
+updateSlide();
 
 // SPARKLES
 const sparklesContainer = document.querySelector(".sparkles");
 const sparkCount = 50;
 const wSpark = window.innerWidth;
 const hSpark = window.innerHeight;
-
 for (let i = 0; i < sparkCount; i++) {
   const s = document.createElement("span");
   s.style.left = Math.random() * wSpark + "px";
@@ -47,8 +45,6 @@ for (let i = 0; i < sparkCount; i++) {
   s.style.animationDelay = Math.random() * 2 + "s";
   sparklesContainer.appendChild(s);
 }
-
-updateSlide();
 
 // PARALLAX FOTO ABOUT
 window.addEventListener("scroll", () => {
@@ -61,8 +57,16 @@ window.addEventListener("scroll", () => {
 
 // BACK TO TOP
 const pageTopBtn = document.getElementById("pageTopBtn");
-if (pageTopBtn) {
-  pageTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
+
+// Mostrar solo después del preloader
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    pageTopBtn.style.display = "block";
+  }, 2600);
+});
+
+// Scroll suave hasta arriba
+pageTopBtn.addEventListener("click", () => {
+  document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+  document.body.scrollTo({ top: 0, behavior: "smooth" });
+});
