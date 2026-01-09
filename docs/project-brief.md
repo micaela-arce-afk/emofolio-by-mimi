@@ -1,9 +1,8 @@
 # Project Brief
 
-**Student:** [Your Name]  
-**Handle:** @[your-github-username]  
-**Course:** Web Design 2025 · Fall  
-**Date:** [Fill in date - Week 2]
+**Student:** Micaela Lucía Arce Gutiérrez  
+**Handle:** @micaela-arce-afk
+**Course:** Web Design 2025 · Fall
 
 ---
 
@@ -11,15 +10,15 @@
 
 ### What are you building?
 
-<!-- Describe your project in 2-3 sentences -->
+A personal portfolio website to showcase Micaela Lucía Arce Gutiérrez’s work in **visual design, illustration, UX/UI, motion graphics, and 3D**. The project combines a modern aesthetic with smooth animations and interactive elements to engage visitors.
 
 ### Who is it for?
 
-<!-- Define your target audience -->
+The target audience includes potential clients, collaborators, and studios interested in hiring or exploring Micaela’s creative work, as well as peers in the design and digital arts community.
 
 ### Why does it matter?
 
-<!-- Explain the purpose and value of your project -->
+The portfolio demonstrates **skills, style, and professional versatility**, providing a central hub for Micaela’s projects while serving as a polished example of web design, responsive UX, and interactive storytelling.
 
 ---
 
@@ -27,27 +26,27 @@
 
 ### Core Technologies
 
-- [ ] HTML5 (semantic markup)
-- [ ] CSS3 (responsive design)
-- [ ] JavaScript (if applicable)
-- [ ] Other: \***\*\_\_\_\*\***
+- [x] HTML5 (semantic markup)
+- [x] CSS3 (responsive design)
+- [x] JavaScript (vanilla, for animations and interactivity)
+- [ ] Other: Optional GSAP for advanced animations
 
 ### Accessibility Goals
 
-- [ ] Semantic HTML structure
-- [ ] Proper heading hierarchy
-- [ ] Alt text for images
-- [ ] Keyboard navigation support
-- [ ] Color contrast compliance
-- [ ] Screen reader compatibility
+- [x] Semantic HTML structure
+- [x] Proper heading hierarchy
+- [x] Alt text for images
+- [x] Keyboard navigation support
+- [x] Color contrast compliance
+- [x] Screen reader compatibility
 
 ### Responsive Design Strategy
 
-- [ ] Mobile-first approach
-- [ ] Flexible grid system
-- [ ] Scalable typography
-- [ ] Optimized images
-- [ ] Touch-friendly interactions
+- [x] Mobile-first approach
+- [x] Flexible grid system
+- [x] Scalable typography
+- [x] Optimized images (`.webp`, lazy loading)
+- [x] Touch-friendly interactions
 
 ---
 
@@ -55,19 +54,21 @@
 
 ### Key Sections/Pages
 
-1.
-2.
-3.
+1. **Homepage (`index.html`)** – Hero carousel, name/logo, professions, sparkles and animations.
+2. **Works (`works.html`)** – Showcase of selected projects with interactive stars background.
+3. **Contact (`contact.html`)** – Contact form with dynamic stars background and smooth interactions.
 
 ### Content Sources
 
-<!-- Where will your content come from? -->
+- Original design works, illustrations, motion graphics, and 3D models.
+- Self-written copy for About section and skills.
+- Optimized images created or exported for web.
 
 ### Multilingual Considerations
 
-- Primary language:
-- Secondary language (optional):
-- Translation strategy:
+- Primary language: English
+- Secondary language (optional): Spanish (future expansion)
+- Translation strategy: Static text for main sections, easy to duplicate into alternate language files.
 
 ---
 
@@ -75,19 +76,26 @@
 
 ### Visual Style
 
-<!-- Describe your aesthetic approach -->
+- Clean, minimalistic interface with neon-accented details.
+- Smooth animations, floating sparkles, glowing text, and subtle motion effects.
+- Modern typographic hierarchy and clear separation of content blocks.
 
 ### Color Palette
 
-<!-- List your main colors -->
+- Background: Dark, near black (`#0a0a0a`)
+- Accent: Neon blue (`#7dd2f5`)
+- Text: White/light gray (`#ffffff`, `#e0e0e0`)
 
 ### Typography
 
-<!-- What fonts/typeface approach will you use? -->
+- **Poppins** (Google Fonts) for headings and body text
+- Scalable, responsive sizes for all devices
 
 ### Inspiration/References
 
-<!-- List 2-3 websites or designs that inspire your approach -->
+- Awwwards winners in portfolio design
+- Modern creative studios’ websites
+- Neon / futuristic UI elements for motion emphasis
 
 ---
 
@@ -95,18 +103,18 @@
 
 ### Week 4 Goals
 
-- [ ] Functional homepage
-- [ ] Basic responsive layout
-- [ ] Core content in place
-- [ ] Accessible markup
+- [x] Functional homepage
+- [x] Basic responsive layout
+- [x] Core content in place
+- [x] Accessible markup
 
 ### Final Project Goals
 
-- [ ] Fully responsive across devices
-- [ ] Meets WCAG 2.1 AA standards
-- [ ] Fast loading performance
-- [ ] Complete content
-- [ ] Polished visual design
+- [x] Fully responsive across devices
+- [x] Meets WCAG 2.1 AA standards
+- [x] Fast loading performance
+- [x] Complete content
+- [x] Polished visual design with animations and interactivity
 
 ---
 
@@ -114,10 +122,12 @@
 
 ### What excites you most about this project?
 
+Creating a **dynamic, interactive portfolio** that blends my illustration and design work into a cohesive web experience.
+
 ### What challenges do you anticipate?
+
+Ensuring animations are smooth **without compromising performance**, and maintaining accessibility while keeping the site visually striking.
 
 ### How does this project connect to your learning goals?
 
----
-
-_This brief will evolve as your project develops. Update it as needed and reference it in your weekly commits._
+It demonstrates proficiency in **HTML, CSS, JS, responsive design, and UX**, while providing a professional showcase for my work.

@@ -2,27 +2,31 @@
 # This file will be used to generate your entry in the course showroom
 
 # Basic information
-handle: your-github-username
-name: Your Full Name
-email: your-email@udit.es
+handle: micaela-arce-afk
+name: Micaela Lucía Arce Gutiérrez
+email: micaelalucia.arce@alumnos.udit.es / micaela.arce.b@gmail.com
 
 # URLs (will be auto-generated if you follow naming conventions)
-github_url: https://github.com/your-username
-project_url: https://your-username.github.io/your-project-repo
-repository_url: https://github.com/your-username/your-project-repo
+github_url: https://github.com/micaela-arce-afk
+project_url: https://micaela-arce-afk.github.io/emofolio-by-mimi/
+repository_url: https://github.com/micaela-arce-afk/emofolio-by-mimi
 
 # Project details
 title:
-  es: Título de tu Proyecto en Español
-  en: Your Project Title in English
+  es: Emofolio by Mimi
+  en: Emofolio by Mimi
 
 abstract:
   es: |
-    Una descripción concisa de tu proyecto web en español. 
-    Explica qué construyes, para quién y por qué es importante.
+    Emofolio by Mimi es el portafolio web de Micaela Lucía Arce Gutiérrez, 
+    diseñado para mostrar su trabajo en diseño visual, ilustración, UX/UI, 
+    motion graphics y 3D. El proyecto busca ofrecer una experiencia visual 
+    interactiva y dinámica, destacando creatividad y estilo personal.
   en: |
-    A concise description of your web project in English.
-    Explain what you're building, for whom, and why it matters.
+    Emofolio by Mimi is the web portfolio of Micaela Lucía Arce Gutiérrez, 
+    designed to showcase her work in visual design, illustration, UX/UI, 
+    motion graphics, and 3D. The project aims to deliver an interactive and 
+    dynamic visual experience, highlighting creativity and personal style.
 
 # Technical tags (choose relevant ones)
 tags:
@@ -30,21 +34,18 @@ tags:
   - css3
   - responsive-design
   - accessibility
-  # Add more as relevant: javascript, sass, performance, etc.
+  - javascript
+  - animation
+  - ux-ui
 
 # Learning objectives you're focusing on
 learning_focus:
   - semantic-html
   - mobile-first-design
   - web-accessibility
-  # Add more as you progress
-
-# Week tracking (update as you go)
-milestones:
-  week_1_setup: false
-  week_2_brief: false
-  week_4_metadata: false
-  week_5_showcase: false
+  - responsive-layouts
+  - interactive-ui
+  - performance-optimization
 
 # Optional: link to your project brief
 brief_url: project-brief.md
