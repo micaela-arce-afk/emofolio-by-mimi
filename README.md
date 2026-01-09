@@ -87,7 +87,7 @@ Este portfolio está desarrollado en **HTML, CSS y JavaScript vanilla**, con un 
 **Angel Mikan**
 
 - Portfolio: [https://micaela-arce-afk.github.io/emofolio-by-mimi/](https://micaela-arce-afk.github.io/emofolio-by-mimi/)
-- Email: [tu correo aquí]
+- Email: [micaela.arce.b@gmail.com]
 
 ## Licencia
 
