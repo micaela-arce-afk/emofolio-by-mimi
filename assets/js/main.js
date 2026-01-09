@@ -1,53 +1,40 @@
 // Light/Dark Mode
-const btn = document.getElementById("darkModeBtn");
-let darkMode = false;
+const modeBtn = document.getElementById("darkModeBtn");
+let dark = false;
 
-btn.addEventListener("click", () => {
-  darkMode = !darkMode;
-
-  if (darkMode) {
+modeBtn.addEventListener("click", () => {
+  dark = !dark;
+  if (dark) {
     document.body.style.background = "#111";
-    document.body.style.color = "#fff";
-    document.querySelector(".nav-top").style.background = "#222";
-    document
-      .querySelectorAll(".nav-links a")
-      .forEach((a) => (a.style.color = "#fff"));
-    document.querySelector(".logo").style.color = "#fff";
-    btn.textContent = "Light Mode";
+    modeBtn.textContent = "Light Mode";
   } else {
     document.body.style.background = "#f5f5f5";
-    document.body.style.color = "#000";
-    document.querySelector(".nav-top").style.background = "#000";
-    document
-      .querySelectorAll(".nav-links a")
-      .forEach((a) => (a.style.color = "#fff"));
-    document.querySelector(".logo").style.color = "#fff";
-    btn.textContent = "Dark Mode";
+    modeBtn.textContent = "Dark Mode";
   }
 });
 
-// Carrusel
-const items = document.querySelectorAll(".carousel-item");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-let currentIndex = 0;
+// Carrusel funcional
+const slides = document.querySelectorAll(".carousel-item");
+const prev = document.getElementById("prevBtn");
+const next = document.getElementById("nextBtn");
+let idx = 0;
 
-function showSlide(index) {
-  items.forEach((item, i) => item.classList.toggle("active", i === index));
+function updateSlide() {
+  slides.forEach((s, i) => s.classList.toggle("active", i === idx));
 }
 
-prevBtn.addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + items.length) % items.length;
-  showSlide(currentIndex);
+prev.addEventListener("click", () => {
+  idx = (idx - 1 + slides.length) % slides.length;
+  updateSlide();
 });
 
-nextBtn.addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % items.length;
-  showSlide(currentIndex);
+next.addEventListener("click", () => {
+  idx = (idx + 1) % slides.length;
+  updateSlide();
 });
 
-// Cambio automático cada 5s
+// automatico cada 5s
 setInterval(() => {
-  currentIndex = (currentIndex + 1) % items.length;
-  showSlide(currentIndex);
+  idx = (idx + 1) % slides.length;
+  updateSlide();
 }, 5000);
