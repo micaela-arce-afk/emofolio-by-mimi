@@ -3,14 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Angel Mikan - Works</title>
+
+    <title>Angel Mikan – Works</title>
+    <meta
+      name="description"
+      content="Projects and works by Angel Mikan in illustration, graphic design, UX/UI and digital media."
+    />
+    <meta
+      name="keywords"
+      content="Angel Mikan, works, portfolio, illustration, graphic design, UX UI, digital media"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Angel Mikan – Works" />
+    <meta
+      property="og:description"
+      content="Explore selected works by Angel Mikan in illustration, design and digital media."
+    />
+    <meta
+      property="og:url"
+      content="https://micaela-arce-afk.github.io/emofolio-by-mimi/works.html"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/works.css" />
   </head>
+
   <body>
     <!-- NAV -->
     <nav class="nav-top">
@@ -30,28 +56,41 @@
         and digital media.
       </p>
       <div class="stars-container"></div>
-      <!-- CONTENEDOR DE ESTRELLAS -->
     </header>
 
     <!-- WORKS GRID -->
     <main class="works-section">
       <div class="works-grid">
         <div class="work-card">
-          <img src="assets/images/work1.png" alt="Work 1" />
+          <img
+            src="assets/images/work1.png"
+            alt="Illustration and graphic design project"
+            loading="lazy"
+          />
           <div class="work-info">
             <h3>Project Title 1</h3>
             <p>Illustration / Graphic Design</p>
           </div>
         </div>
+
         <div class="work-card">
-          <img src="assets/images/work2.png" alt="Work 2" />
+          <img
+            src="assets/images/work2.png"
+            alt="UX UI and motion graphics project"
+            loading="lazy"
+          />
           <div class="work-info">
             <h3>Project Title 2</h3>
             <p>UX/UI / Motion Graphics</p>
           </div>
         </div>
+
         <div class="work-card">
-          <img src="assets/images/work3.png" alt="Work 3" />
+          <img
+            src="assets/images/work3.png"
+            alt="3D and interactive visuals project"
+            loading="lazy"
+          />
           <div class="work-info">
             <h3>Project Title 3</h3>
             <p>3D / Interactive Visuals</p>
@@ -70,11 +109,9 @@
     <!-- JS -->
     <script src="assets/js/works-contact.js"></script>
     <script>
-      // Logo siempre vuelve al index.html
       const navLogo = document.querySelector(".logo");
       if (navLogo) {
-        navLogo.addEventListener("click", (e) => {
-          e.preventDefault();
+        navLogo.addEventListener("click", () => {
           window.location.href = "index.html";
         });
       }

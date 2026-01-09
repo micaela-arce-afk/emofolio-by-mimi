@@ -431,3 +431,10 @@ body,
     transition: none !important;
   }
 }
+/* Accesibilidad: reducir movimiento si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

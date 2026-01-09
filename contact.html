@@ -1,16 +1,42 @@
-¡<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Angel Mikan - Contact</title>
+
+    <title>Angel Mikan – Contact</title>
+    <meta
+      name="description"
+      content="Contact Angel Mikan for collaborations, commissions or creative projects."
+    />
+    <meta
+      name="keywords"
+      content="Angel Mikan, contact, portfolio, designer, illustrator"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Angel Mikan – Contact" />
+    <meta
+      property="og:description"
+      content="Get in touch with Angel Mikan for collaborations or commissions."
+    />
+    <meta
+      property="og:url"
+      content="https://micaela-arce-afk.github.io/emofolio-by-mimi/contact.html"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/contact.css" />
   </head>
+
   <body>
     <!-- NAV -->
     <nav class="nav-top">
@@ -29,17 +55,28 @@
         Get in touch with me for collaborations, commissions, or just to say hi!
       </p>
       <div class="stars-container"></div>
-      <!-- CONTENEDOR DE ESTRELLAS -->
     </header>
 
     <!-- CONTACT FORM -->
     <main class="contact-section">
       <form class="contact-form">
         <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your Name" required />
+        <input
+          type="text"
+          id="name"
+          placeholder="Your Name"
+          required
+          aria-label="Your name"
+        />
 
         <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Your Email" required />
+        <input
+          type="email"
+          id="email"
+          placeholder="Your Email"
+          required
+          aria-label="Your email"
+        />
 
         <label for="message">Message</label>
         <textarea
@@ -47,6 +84,7 @@
           rows="6"
           placeholder="Your Message"
           required
+          aria-label="Your message"
         ></textarea>
 
         <button type="submit">Send Message</button>
@@ -63,11 +101,9 @@
     <!-- JS -->
     <script src="assets/js/works-contact.js"></script>
     <script>
-      // Logo siempre vuelve al index.html
       const navLogo = document.querySelector(".logo");
       if (navLogo) {
-        navLogo.addEventListener("click", (e) => {
-          e.preventDefault();
+        navLogo.addEventListener("click", () => {
           window.location.href = "index.html";
         });
       }
