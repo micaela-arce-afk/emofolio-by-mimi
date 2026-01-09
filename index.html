@@ -10,7 +10,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"
       rel="stylesheet"
     />
-
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/theme.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -29,9 +28,9 @@
     <nav class="nav-top">
       <div class="logo">Mikan</div>
       <ul class="nav-links">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Works</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="works.html">Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
@@ -71,8 +70,131 @@
       </div>
     </header>
 
+    <!-- ABOUT -->
+    <main class="about-section" id="about">
+      <div class="about-inner">
+        <!-- FOTO IZQUIERDA -->
+        <div class="about-left">
+          <img
+            src="assets/images/profile.png"
+            alt="Foto de Mikan"
+            class="about-photo"
+          />
+        </div>
+
+        <!-- TEXTO A LA DERECHA -->
+        <div class="about-right">
+          <h2 class="about-title">
+            <span class="about-large">MIKAN</span>
+            <span class="about-japanese">ミカン</span>
+          </h2>
+          <p class="about-text">
+            Soy Mikan, estudié
+            <strong>Diseño Audiovisual e Ilustración en UDIT</strong> y me
+            apasiona crear mundos visuales únicos, desde ilustración hasta
+            diseño digital y 3D.
+          </p>
+
+          <div class="skills-icons">
+            <img src="assets/icons/ps.svg" alt="Photoshop" class="skill-icon" />
+            <img
+              src="assets/icons/ai.svg"
+              alt="Illustrator"
+              class="skill-icon"
+            />
+            <img src="assets/icons/figma.svg" alt="Figma" class="skill-icon" />
+            <img
+              src="assets/icons/blender.svg"
+              alt="Blender"
+              class="skill-icon"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>© 2026 Mikan — All rights reserved.</p>
+        <button id="pageTopBtn">BACK TO TOP ↑</button>
+      </div>
+    </footer>
+
     <!-- JS -->
     <script src="assets/js/preloader.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      "use strict";
+
+      // CARRUSEL
+      const slides = document.querySelectorAll(".carousel-item");
+      const prev = document.getElementById("prevBtn");
+      const next = document.getElementById("nextBtn");
+      let idx = 0;
+
+      function updateSlide() {
+        slides.forEach((s, i) => {
+          if (i === idx) {
+            s.style.opacity = 1;
+            s.style.zIndex = 2;
+          } else {
+            s.style.opacity = 0;
+            s.style.zIndex = 1;
+          }
+        });
+      }
+
+      prev.addEventListener("click", () => {
+        idx = (idx - 1 + slides.length) % slides.length;
+        updateSlide();
+      });
+
+      next.addEventListener("click", () => {
+        idx = (idx + 1) % slides.length;
+        updateSlide();
+      });
+
+      setInterval(() => {
+        idx = (idx + 1) % slides.length;
+        updateSlide();
+      }, 5000);
+
+      // SPARKLES
+      const sparklesContainer = document.querySelector(".sparkles");
+      const sparkCount = 50;
+      const wSpark = window.innerWidth;
+      const hSpark = window.innerHeight;
+
+      for (let i = 0; i < sparkCount; i++) {
+        const s = document.createElement("span");
+        s.style.left = Math.random() * wSpark + "px";
+        s.style.top = Math.random() * hSpark + "px";
+        s.style.width = s.style.height = Math.random() * 2 + 1 + "px";
+        s.style.opacity = Math.random();
+        s.style.animationDuration = 1.5 + Math.random() * 2 + "s";
+        s.style.animationDelay = Math.random() * 2 + "s";
+        sparklesContainer.appendChild(s);
+      }
+
+      updateSlide();
+
+      // PARALLAX FOTO ABOUT
+      window.addEventListener("scroll", () => {
+        const photo = document.querySelector(".about-photo");
+        if (photo) {
+          const y = window.scrollY;
+          photo.style.transform = `translateY(${y * 0.08}px)`;
+        }
+      });
+
+      // BACK TO TOP
+      const pageTopBtn = document.getElementById("pageTopBtn");
+      if (pageTopBtn) {
+        pageTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+    </script>
   </body>
 </html>

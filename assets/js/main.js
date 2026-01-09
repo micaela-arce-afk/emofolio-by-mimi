@@ -1,14 +1,11 @@
 "use strict";
 
-// --------------------
 // CARRUSEL
-// --------------------
 const slides = document.querySelectorAll(".carousel-item");
 const prev = document.getElementById("prevBtn");
 const next = document.getElementById("nextBtn");
 let idx = 0;
 
-// Función para actualizar slide con fade smooth
 function updateSlide() {
   slides.forEach((s, i) => {
     if (i === idx) {
@@ -21,7 +18,6 @@ function updateSlide() {
   });
 }
 
-// Flechas manuales
 prev.addEventListener("click", () => {
   idx = (idx - 1 + slides.length) % slides.length;
   updateSlide();
@@ -30,16 +26,12 @@ next.addEventListener("click", () => {
   idx = (idx + 1) % slides.length;
   updateSlide();
 });
-
-// Carrusel automático cada 5 segundos
 setInterval(() => {
   idx = (idx + 1) % slides.length;
   updateSlide();
 }, 5000);
 
-// --------------------
-// SPARKLES alrededor del MIKAN
-// --------------------
+// SPARKLES
 const sparklesContainer = document.querySelector(".sparkles");
 const sparkCount = 50;
 const wSpark = window.innerWidth;
@@ -51,10 +43,26 @@ for (let i = 0; i < sparkCount; i++) {
   s.style.top = Math.random() * hSpark + "px";
   s.style.width = s.style.height = Math.random() * 2 + 1 + "px";
   s.style.opacity = Math.random();
-  s.style.animationDuration = 1.5 + Math.random() * 2 + "s"; // más lento y suave
+  s.style.animationDuration = 1.5 + Math.random() * 2 + "s";
   s.style.animationDelay = Math.random() * 2 + "s";
   sparklesContainer.appendChild(s);
 }
 
-// Inicializar el primer slide visible
 updateSlide();
+
+// PARALLAX FOTO ABOUT
+window.addEventListener("scroll", () => {
+  const photo = document.querySelector(".about-photo");
+  if (photo) {
+    const y = window.scrollY;
+    photo.style.transform = `translateY(${y * 0.08}px)`;
+  }
+});
+
+// BACK TO TOP
+const pageTopBtn = document.getElementById("pageTopBtn");
+if (pageTopBtn) {
+  pageTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}

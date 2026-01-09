@@ -9,7 +9,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: var(--font-primary);
-  background: #000; /* fondo negro */
+  background: #000;
   overflow-x: hidden;
   color: var(--color-text);
 }
@@ -76,7 +76,7 @@ body {
   left: 0;
   opacity: 0;
   z-index: 1;
-  transition: opacity 1s ease-in-out; /* fade smooth */
+  transition: opacity 1s ease-in-out;
 }
 .carousel-item.active {
   opacity: 1;
@@ -152,7 +152,6 @@ body {
   }
 }
 
-/* SPARKLES alrededor del MIKAN */
 .sparkles {
   position: absolute;
   inset: 0;
@@ -179,7 +178,6 @@ body {
   }
 }
 
-/* PROFESIONES flotando */
 .professions .name-item {
   font-size: var(--font-size-p);
   font-weight: 600;
@@ -198,7 +196,6 @@ body {
   }
 }
 
-/* FLECHAS animadas smooth con hover */
 .carousel-controls {
   display: flex;
   gap: 1.5rem;
@@ -222,8 +219,6 @@ body {
   z-index: 5;
   animation: arrowFloat 2s ease-in-out infinite;
 }
-
-/* Animación flotante independiente */
 @keyframes arrowFloat {
   0%,
   100% {
@@ -239,16 +234,122 @@ body {
     transform: translateY(-3px);
   }
 }
-
-/* Hover solo cambia escala y rotación suavemente, float sigue */
 .carousel-arrow:hover {
   background: rgba(0, 0, 0, 0.9);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-  transform: scale(1.2) rotate(10deg); /* translateY de la animación sigue */
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* ABOUT */
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  padding: 4rem 2rem;
+  overflow: hidden;
+}
+.about-inner {
+  display: flex;
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+}
+.about-left {
+  flex: 1;
+  min-width: 280px;
+  position: relative;
+}
+.about-photo {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  transform: translateY(0);
+  transition: transform 0.5s ease-out;
+  box-shadow: 0 0 20px rgba(125, 210, 245, 0.4);
+}
+.about-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.about-title {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+.about-large {
+  font-size: clamp(3rem, 6vw, 6rem);
+}
+.about-japanese {
+  font-size: clamp(2rem, 4vw, 4rem);
+  opacity: 0.7;
+}
+.about-text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+.skills-icons {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+.skill-icon {
+  width: 48px;
+  height: 48px;
+  filter: brightness(1.5);
+  transition: transform 0.3s;
+}
+.skill-icon:hover {
+  transform: scale(1.3);
+}
+
+/* FOOTER */
+.footer {
+  padding: 2rem;
+  text-align: center;
+  background: #000;
+  color: #fff;
+}
+#pageTopBtn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background: var(--color-accent);
+  border: none;
+  color: #000;
+  font-weight: 700;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+#pageTopBtn:hover {
+  background: var(--color-accent-dark);
+  color: #fff;
 }
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
+  .about-inner {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .about-left,
+  .about-right {
+    width: 100%;
+  }
+  .about-large {
+    font-size: 4rem;
+  }
+  .about-japanese {
+    font-size: 2.5rem;
+  }
   .name-item.mikan {
     font-size: 4.5rem;
   }
@@ -268,7 +369,7 @@ body {
   }
 }
 
-/* PRELOADER y fondo negro */
+/* Fondo preloader y hero negro */
 body,
 .hero,
 .hero-carousel,
