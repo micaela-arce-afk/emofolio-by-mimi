@@ -5,7 +5,7 @@
   --color-accent-dark: #5ab0d6;
 }
 
-/* NAV idéntico a la home */
+/* NAV */
 .nav-top {
   position: fixed;
   top: 0;
@@ -21,7 +21,7 @@
 }
 
 .nav-top .logo {
-  color: #fff; /* blanco puro */
+  color: #fff;
   font-weight: 900;
   font-size: 2.2rem;
   cursor: pointer;
@@ -73,82 +73,75 @@
   max-width: 700px;
 }
 
-/* RESPLANDOR DEL CONTENIDO */
+/* CONTACT FORM */
 .contact-section {
-  max-width: 600px;
+  max-width: 800px; /* RECTÁNGULO MÁS ANCHO */
   margin: 4rem auto;
-  padding: 0 2rem;
+  padding: 3rem 2rem;
   box-shadow: 0 0 60px rgba(255, 255, 255, 0.2);
   position: relative;
   z-index: 2;
   color: #fff;
   font-family: var(--font-primary);
+  border-radius: 16px;
 }
 
-/* FORMULARIO */
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
+
 .contact-form label {
   font-weight: 600;
   color: #fff;
+  margin-bottom: 0.8rem;
 }
+
+/* INPUTS Y TEXTAREA */
 .contact-form input,
 .contact-form textarea {
-  padding: 0.8rem 1rem;
-  border-radius: 6px;
+  width: 100%;
+  max-width: 750px; /* MÁS ANCHO DENTRO DEL RECTÁNGULO */
+  padding: 2rem 1.6rem;
+  border-radius: 14px;
   border: none;
   background: #111;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
+
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: #aaa;
 }
+
+/* BOTÓN SEND MESSAGE */
 .contact-form button {
-  padding: 0.8rem 1rem;
+  padding: 1.8rem 2.5rem;
   background: #fff;
   color: #000;
   font-weight: 700;
+  font-size: 1.2rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 14px;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
+  margin-top: 1rem;
 }
+
 .contact-form button:hover {
   background: #ddd;
   color: #000;
 }
 
-/* ESTRELLAS DE FONDO */
+/* ESTRELLAS */
 .hero-contact .stars-container {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-}
-.hero-contact .stars-container span {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background: #fff;
-  opacity: 0.8;
-  animation: starFloat 2s linear infinite;
-}
-@keyframes starFloat {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0, -10px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
 }
 
 /* RESPONSIVE */
@@ -160,6 +153,15 @@
     font-size: 1.2rem;
   }
   .contact-section {
-    padding: 0 1rem;
+    padding: 2rem 1rem;
+    max-width: 95%;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 1.6rem 1rem;
+    max-width: 100%;
+  }
+  .contact-form button {
+    padding: 1.4rem 1.8rem;
   }
 }

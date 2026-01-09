@@ -1,11 +1,11 @@
 :root {
   --font-primary: "Poppins", sans-serif;
   --color-text: #fff;
-  --color-accent: #7dd2f5; /* opcional para efectos, pero logo ahora blanco */
+  --color-accent: #7dd2f5;
   --color-accent-dark: #5ab0d6;
 }
 
-/* NAV idéntico a la home */
+/* NAV */
 .nav-top {
   position: fixed;
   top: 0;
@@ -21,7 +21,7 @@
 }
 
 .nav-top .logo {
-  color: #fff; /* blanco puro */
+  color: #fff;
   font-weight: 900;
   font-size: 2.2rem;
   cursor: pointer;
@@ -55,7 +55,6 @@
   overflow: hidden;
 }
 
-/* Título en neón blanco, un poco más pequeño */
 .hero-title {
   font-family: var(--font-primary);
   font-size: clamp(3rem, 6vw, 5rem);
@@ -74,7 +73,7 @@
   max-width: 700px;
 }
 
-/* RESPLANDOR DEL CONTENIDO */
+/* WORKS GRID */
 .works-section {
   padding: 4rem 2rem;
   max-width: 1200px;
@@ -84,12 +83,12 @@
   z-index: 2;
 }
 
-/* GRID DE WORKS */
 .works-grid {
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
+
 .work-card {
   position: relative;
   overflow: hidden;
@@ -97,15 +96,18 @@
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .work-card img {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
   transition: transform 0.5s;
 }
+
 .work-card:hover img {
   transform: scale(1.05);
 }
+
 .work-info {
   position: absolute;
   bottom: 0;
@@ -117,36 +119,17 @@
   backdrop-filter: blur(4px);
   transition: background 0.3s;
 }
+
 .work-card:hover .work-info {
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* ESTRELLAS DE FONDO */
+/* ESTRELLAS */
 .hero-works .stars-container {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-}
-.hero-works .stars-container span {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background: #fff;
-  opacity: 0.8; /* más visibles */
-  animation: starFloat 2s linear infinite;
-}
-@keyframes starFloat {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0, -10px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
 }
 
 /* RESPONSIVE */
