@@ -3,6 +3,7 @@
   --color-text: #fff;
   --color-accent: #7dd2f5;
   --color-accent-dark: #5ab0d6;
+  --color-bg: #000; /* fondo negro general */
 }
 
 /* NAV */
@@ -12,7 +13,7 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  background: #000;
+  background: var(--color-bg);
   padding: 1rem 3rem;
   display: flex;
   align-items: center;
@@ -21,7 +22,7 @@
 }
 
 .nav-top .logo {
-  color: #fff;
+  color: var(--color-text);
   font-weight: 900;
   font-size: 2.2rem;
   cursor: pointer;
@@ -50,9 +51,10 @@
   padding-top: 80px;
   height: 60vh;
   text-align: center;
-  background-color: #000;
+  background-color: var(--color-bg);
   position: relative;
   overflow: hidden;
+  color: var(--color-text);
 }
 
 .hero-title {
@@ -61,14 +63,14 @@
   font-weight: 900;
   letter-spacing: 4px;
   margin-bottom: 1rem;
-  color: #fff;
-  text-shadow: 0 0 10px #fff, 0 0 20px rgba(255, 255, 255, 0.3);
+  color: var(--color-text);
+  text-shadow: 0 0 10px var(--color-text), 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .hero-subtitle {
   font-family: var(--font-primary);
   font-size: 1.5rem;
-  color: #fff;
+  color: var(--color-text);
   opacity: 0.85;
   max-width: 700px;
 }
@@ -81,11 +83,13 @@
   box-shadow: 0 0 60px rgba(255, 255, 255, 0.2);
   position: relative;
   z-index: 2;
-  color: #fff;
+  color: var(--color-text);
   font-family: var(--font-primary);
   border-radius: 16px;
+  background-color: #111; /* fondo del rectángulo */
 }
 
+/* FORMULARIO */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -94,20 +98,19 @@
 
 .contact-form label {
   font-weight: 600;
-  color: #fff;
+  color: var(--color-text);
   margin-bottom: 0.8rem;
 }
 
-/* INPUTS Y TEXTAREA */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  max-width: 750px; /* MÁS ANCHO DENTRO DEL RECTÁNGULO */
+  max-width: 750px;
   padding: 2rem 1.6rem;
   border-radius: 14px;
   border: none;
-  background: #111;
-  color: #fff;
+  background: #222;
+  color: var(--color-text);
   font-size: 1.2rem;
   line-height: 1.6;
 }
@@ -117,10 +120,9 @@
   color: #aaa;
 }
 
-/* BOTÓN SEND MESSAGE */
 .contact-form button {
   padding: 1.8rem 2.5rem;
-  background: #fff;
+  background: var(--color-text);
   color: #000;
   font-weight: 700;
   font-size: 1.2rem;
@@ -142,6 +144,12 @@
   inset: 0;
   pointer-events: none;
   z-index: 0;
+}
+
+/* FONDO GENERAL NEGRO PARA TODA LA PÁGINA */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 /* RESPONSIVE */

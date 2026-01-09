@@ -3,19 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Angel Mikan - Portfolio</title>
+    <title>Angel Mikan — Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio de Angel Mikan: proyectos de diseño, frontend, UX/UI y audiovisual."
+    />
+    <meta name="author" content="Angel Mikan" />
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:title" content="Angel Mikan — Portfolio" />
+    <meta
+      property="og:description"
+      content="Portfolio de Angel Mikan: proyectos de diseño, frontend, UX/UI y audiovisual."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://micaela-arce-afk.github.io/emofolio-by-mimi/"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Angel Mikan — Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Portfolio de Angel Mikan: proyectos de diseño, frontend, UX/UI y audiovisual."
+    />
+    <meta
+      name="twitter:image"
+      content="https://micaela-arce-afk.github.io/emofolio-by-mimi/assets/images/preview.webp"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
 
     <!-- Fuentes -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"
+      as="style"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"
       rel="stylesheet"
     />
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/theme.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/preloader.css" />
   </head>
   <body>
+    <!-- H1 oculto para SEO y jerarquía -->
+    <h1 class="visually-hidden">
+      Portfolio de Angel Mikan — Diseño, UX/UI y Audiovisual
+    </h1>
+
     <!-- PRELOADER -->
     <div id="preloader">
       <div class="preloader-stars"></div>
@@ -25,7 +68,7 @@
     </div>
 
     <!-- NAV -->
-    <nav class="nav-top">
+    <nav class="nav-top" aria-label="Main navigation">
       <div class="logo">Mikan</div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -37,9 +80,21 @@
     <!-- HERO -->
     <header class="hero">
       <div class="hero-carousel">
-        <img src="assets/images/work1.png" class="carousel-item active" />
-        <img src="assets/images/work2.png" class="carousel-item" />
-        <img src="assets/images/work3.png" class="carousel-item" />
+        <img
+          src="assets/images/work1.png"
+          class="carousel-item active"
+          loading="lazy"
+        />
+        <img
+          src="assets/images/work2.png"
+          class="carousel-item"
+          loading="lazy"
+        />
+        <img
+          src="assets/images/work3.png"
+          class="carousel-item"
+          loading="lazy"
+        />
       </div>
       <div class="hero-overlay"></div>
 
@@ -64,97 +119,124 @@
         </div>
 
         <div class="carousel-controls">
-          <button class="carousel-arrow left" id="prevBtn">&#10094;</button>
-          <button class="carousel-arrow right" id="nextBtn">&#10095;</button>
+          <button
+            class="carousel-arrow left"
+            id="prevBtn"
+            aria-label="Previous slide"
+          >
+            &#10094;
+          </button>
+          <button
+            class="carousel-arrow right"
+            id="nextBtn"
+            aria-label="Next slide"
+          >
+            &#10095;
+          </button>
         </div>
       </div>
     </header>
 
     <!-- ABOUT -->
-    <main class="about-section" id="about">
-      <!-- Separador "ABOUT" tipo línea -->
-      <div class="about-separator-container">
-        <span class="line"></span>
-        <span class="about-separator">ABOUT</span>
-        <span class="line"></span>
-      </div>
-
-      <div class="about-inner">
-        <!-- FOTO IZQUIERDA -->
-        <div class="about-left">
-          <img
-            src="assets/images/profile.webp"
-            alt="Foto de Mikan"
-            class="about-photo"
-          />
+    <main>
+      <section class="about-section" id="about">
+        <!-- Separador "ABOUT" tipo línea -->
+        <div class="about-separator-container">
+          <span class="line"></span>
+          <span class="about-separator">ABOUT</span>
+          <span class="line"></span>
         </div>
 
-        <!-- TEXTO A LA DERECHA -->
-        <div class="about-right">
-          <h2 class="about-title">
-            <span class="about-large">MIKAN</span>
-            <span class="about-japanese">ミカン</span>
-          </h2>
-          <p class="about-text">
-            I’m Mikan, a visual designer and illustrator with a strong interest
-            in audiovisual creation and graphic experimentation. I studied
-            Audiovisual Design and Illustration at UDIT, where I developed a
-            multidisciplinary approach combining image, narrative, and
-            technology. My work focuses on digital illustration, motion
-            graphics, editorial design, and interactive visuals. I mainly work
-            with the Adobe Creative Suite, along with tools such as Cinema 4D,
-            Figma, Visual Studio Code, and Clip Studio Paint. I’m always
-            exploring new visual languages and creative challenges to keep
-            growing as a designer.
-          </p>
-
-          <div class="skills-icons">
+        <div class="about-inner">
+          <!-- FOTO IZQUIERDA -->
+          <div class="about-left">
             <img
-              src="assets/icons/photoshop.webp"
-              class="skill-icon"
-              alt="Photoshop"
-            />
-            <img
-              src="assets/icons/illustrator.webp"
-              class="skill-icon"
-              alt="Illustrator"
-            />
-            <img
-              src="assets/icons/indesign.webp"
-              class="skill-icon"
-              alt="Premiere"
-            />
-            <img
-              src="assets/icons/aftereffects.webp"
-              class="skill-icon"
-              alt="After Effects"
-            />
-            <img
-              src="assets/icons/csp.webp"
-              class="skill-icon"
-              alt="Clip Studio Paint"
-            />
-            <img src="assets/icons/figma.webp" class="skill-icon" alt="Figma" />
-            <img
-              src="assets/icons/visual.webp"
-              class="skill-icon"
-              alt="VS Code"
-            />
-            <img
-              src="assets/icons/cinema.webp"
-              class="skill-icon"
-              alt="Cinema 4D"
+              src="assets/images/profile.webp"
+              alt="Foto de Angel Mikan"
+              class="about-photo"
+              loading="lazy"
             />
           </div>
+
+          <!-- TEXTO A LA DERECHA -->
+          <div class="about-right">
+            <h2 class="about-title">
+              <span class="about-large">MIKAN</span>
+              <span class="about-japanese">ミカン</span>
+            </h2>
+            <p class="about-text">
+              I’m Mikan, a visual designer and illustrator with a strong
+              interest in audiovisual creation and graphic experimentation. I
+              studied Audiovisual Design and Illustration at UDIT, where I
+              developed a multidisciplinary approach combining image, narrative,
+              and technology. My work focuses on digital illustration, motion
+              graphics, editorial design, and interactive visuals. I mainly work
+              with the Adobe Creative Suite, along with tools such as Cinema 4D,
+              Figma, Visual Studio Code, and Clip Studio Paint. I’m always
+              exploring new visual languages and creative challenges to keep
+              growing as a designer.
+            </p>
+
+            <div class="skills-icons">
+              <img
+                src="assets/icons/photoshop.webp"
+                class="skill-icon"
+                alt="Photoshop"
+                loading="lazy"
+              />
+              <img
+                src="assets/icons/illustrator.webp"
+                class="skill-icon"
+                alt="Illustrator"
+                loading="lazy"
+              />
+              <img
+                src="assets/icons/indesign.webp"
+                class="skill-icon"
+                alt="InDesign"
+                loading="lazy"
+              />
+              <img
+                src="assets/icons/aftereffects.webp"
+                class="skill-icon"
+                alt="After Effects"
+                loading="lazy"
+              />
+              <img
+                src="assets/icons/csp.webp"
+                class="skill-icon"
+                alt="Clip Studio Paint"
+                loading="lazy"
+              />
+              <img
+                src="assets/icons/figma.webp"
+                class="skill-icon"
+                alt="Figma"
+                loading="lazy"
+              />
+              <img
+                src="assets/icons/visual.webp"
+                class="skill-icon"
+                alt="VS Code"
+                loading="lazy"
+              />
+              <img
+                src="assets/icons/cinema.webp"
+                class="skill-icon"
+                alt="Cinema 4D"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-inner">
         <p>© 2026 Angel Mikan — All rights reserved.</p>
-        <button id="pageTopBtn">BACK TO TOP ↑</button>
+        <button id="pageTopBtn" aria-label="Back to top">BACK TO TOP ↑</button>
       </div>
     </footer>
 

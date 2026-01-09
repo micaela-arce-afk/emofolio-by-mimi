@@ -8,4 +8,18 @@
   --font-size-p: 1.3rem;
   --nav-height: 70px;
   --carousel-arrow-size: 50px;
+  --transition-speed: 0.3s; /* opcional para animaciones coherentes */
+}
+
+/* Para ocultar el h1 SEO sin que aparezca visualmente */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
