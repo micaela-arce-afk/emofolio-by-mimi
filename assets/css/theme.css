@@ -1,6 +1,5 @@
-/* Variables y tokens de diseño */
 :root {
-  --color-bg: #111;
+  --color-bg: #000; /* antes era #111 */
   --color-accent: #7dd2f5;
   --color-accent-dark: #1a2a40;
   --color-text: #ffffff;

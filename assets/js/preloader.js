@@ -10,8 +10,8 @@ for (let i = 0; i < starCount; i++) {
   star.style.top = Math.random() * h + "px";
   star.style.width = star.style.height = Math.random() * 2 + 1 + "px";
   star.style.opacity = Math.random();
-  star.style.animationDuration = 0.5 + Math.random() * 1 + "s"; // más rápido
-  star.style.animationDelay = Math.random() * 0.5 + "s";
+  star.style.animationDuration = 2 + Math.random() * 2 + "s"; // más lento
+  star.style.animationDelay = Math.random() * 2 + "s";
   preloaderStars.appendChild(star);
 }
 

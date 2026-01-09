@@ -9,8 +9,9 @@ body {
   height: 100%;
   width: 100%;
   font-family: var(--font-primary);
-  background: var(--color-bg);
+  background: #000; /* fondo negro */
   overflow-x: hidden;
+  color: var(--color-text);
 }
 
 /* NAV */
@@ -55,6 +56,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: #000;
 }
 .hero-carousel {
   position: absolute;
@@ -63,6 +65,7 @@ body {
   height: 100%;
   z-index: 0;
   overflow: hidden;
+  background-color: #000;
 }
 .carousel-item {
   position: absolute;
@@ -72,10 +75,12 @@ body {
   top: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 1.2s ease-in-out;
+  z-index: 1;
+  transition: opacity 1s ease-in-out; /* fade smooth */
 }
 .carousel-item.active {
   opacity: 1;
+  z-index: 2;
 }
 .hero-overlay {
   position: absolute;
@@ -125,6 +130,7 @@ body {
 .name-item.mikan span:nth-child(5) {
   animation-delay: 0.4s;
 }
+
 @keyframes letterFloat {
   0% {
     transform: translateY(0);
@@ -192,12 +198,12 @@ body {
   }
 }
 
-/* FLECHAS animadas */
+/* FLECHAS animadas smooth con hover */
 .carousel-controls {
   display: flex;
   gap: 1.5rem;
   margin-top: 2rem;
-  z-index: 2;
+  z-index: 3;
 }
 .carousel-arrow {
   font-size: 2rem;
@@ -208,22 +214,37 @@ body {
   width: var(--carousel-arrow-size);
   height: var(--carousel-arrow-size);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
   animation: arrowFloat 2s ease-in-out infinite;
 }
-.carousel-arrow:hover {
-  background: rgba(0, 0, 0, 0.9);
-  transform: scale(1.2) rotate(10deg);
-}
+
+/* Animación flotante independiente */
 @keyframes arrowFloat {
   0%,
   100% {
     transform: translateY(0);
   }
+  25% {
+    transform: translateY(-3px);
+  }
   50% {
     transform: translateY(-6px);
   }
+  75% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Hover solo cambia escala y rotación suavemente, float sigue */
+.carousel-arrow:hover {
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  transform: scale(1.2) rotate(10deg); /* translateY de la animación sigue */
 }
 
 /* RESPONSIVE */
@@ -245,4 +266,18 @@ body {
   .nav-links a {
     font-size: 1.2rem;
   }
+}
+
+/* PRELOADER y fondo negro */
+body,
+.hero,
+.hero-carousel,
+#preloader {
+  background-color: #000 !important;
+}
+.preloader-stars span {
+  background: #fff;
+}
+.sparkles span {
+  background: var(--color-accent);
 }
