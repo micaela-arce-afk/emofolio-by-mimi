@@ -1,28 +1,26 @@
-# Node modules (si usas npm)
-node_modules/
-
-# Archivos de entorno
-.env
-*.key
-credentials.json
-
-# Sistemas operativos
+# Archivos de sistema
 .DS_Store
 Thumbs.db
 
-# Archivos de editor
-.vscode/
-.idea/
+# Archivos de caché del editor
+*.swp
+*.swo
+*.bak
 
-# Build / distribución
+# Archivos de log
+*.log
+
+# Build / producción 
 dist/
 build/
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+# Archivos temporales
+*.tmp
+*.temp
 
-# Archivos de caché
-.cache/
+# IDEs
+.vscode/
+.idea/
+
+# Imágenes grandes exportadas que no quieres subir (opcional)
+assets/img/exports/

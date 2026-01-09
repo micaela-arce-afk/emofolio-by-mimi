@@ -1,6 +1,6 @@
 "use strict";
 
-// ESTRELLAS DINÁMICAS PARA WORKS Y CONTACT
+// ESTRELLAS DINÁMICAS PARA WORKS Y CONTACT CON GSAP
 function generateStars(containerSelector, starCount = 80) {
   const container = document.querySelector(containerSelector);
   if (!container) return;
@@ -11,27 +11,25 @@ function generateStars(containerSelector, starCount = 80) {
     star.style.top = Math.random() * container.offsetHeight + "px";
     const size = Math.random() * 2 + 1;
     star.style.width = star.style.height = size + "px";
-    star.style.opacity = 0.5 + Math.random() * 0.5;
+    star.style.opacity = Math.random() * 0.8 + 0.2;
     star.style.position = "absolute";
     star.style.background = "#fff";
     star.style.borderRadius = "50%";
-    star.style.animation = `starFloat ${
-      1 + Math.random() * 2
-    }s linear infinite`;
     container.appendChild(star);
+
+    // Animación GSAP
+    gsap.to(star, {
+      y: -10 - Math.random() * 10, // movimiento vertical aleatorio
+      opacity: Math.random() * 0.5 + 0.3, // parpadeo
+      duration: 1 + Math.random() * 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      delay: Math.random() * 2,
+    });
   }
 }
 
-// Animación CSS para estrellas
-const style = document.createElement("style");
-style.innerHTML = `
-@keyframes starFloat {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}`;
-document.head.appendChild(style);
-
-// Generar estrellas
+// Generar estrellas en secciones
 generateStars(".hero-works .stars-container");
 generateStars(".hero-contact .stars-container");

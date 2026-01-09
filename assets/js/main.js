@@ -35,7 +35,7 @@ setInterval(() => {
 
 updateSlide();
 
-// SPARKLES HERO
+// SPARKLES HERO (GSAP animado)
 const sparklesContainer = document.querySelector(".sparkles");
 const sparkCount = 50;
 const wSpark = window.innerWidth;
@@ -47,9 +47,16 @@ for (let i = 0; i < sparkCount; i++) {
   s.style.top = Math.random() * hSpark + "px";
   s.style.width = s.style.height = Math.random() * 2 + 1 + "px";
   s.style.opacity = Math.random();
-  s.style.animationDuration = 1.5 + Math.random() * 2 + "s";
-  s.style.animationDelay = Math.random() * 2 + "s";
   sparklesContainer.appendChild(s);
+
+  // Animación GSAP de parpadeo
+  gsap.to(s, {
+    opacity: Math.random() * 0.8 + 0.2,
+    duration: 1.5 + Math.random() * 2,
+    repeat: -1,
+    yoyo: true,
+    delay: Math.random() * 2,
+  });
 }
 
 // PARALLAX FOTO ABOUT
@@ -61,7 +68,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// ESTRELLAS OPCIONALES EN ABOUT
+// ESTRELLAS OPCIONALES EN ABOUT (GSAP)
 const aboutSection = document.querySelector(".about-section");
 if (aboutSection) {
   const starsContainer = document.createElement("div");
@@ -78,19 +85,23 @@ if (aboutSection) {
     star.style.top = Math.random() * hAbout + "px";
     star.style.width = star.style.height = Math.random() * 2 + 1 + "px";
     star.style.opacity = Math.random();
-    star.style.animationDuration = 1.5 + Math.random() * 2 + "s";
-    star.style.animationDelay = Math.random() * 2 + "s";
     starsContainer.appendChild(star);
+
+    gsap.to(star, {
+      opacity: Math.random() * 0.8 + 0.2,
+      duration: 1.5 + Math.random() * 2,
+      repeat: -1,
+      yoyo: true,
+      delay: Math.random() * 2,
+    });
   }
 }
 
-// BOTÓN BACK TO TOP SIEMPRE VISIBLE
+// BOTÓN BACK TO TOP
 const pageTopBtn = document.getElementById("pageTopBtn");
 if (pageTopBtn) {
   pageTopBtn.addEventListener("click", () => {
-    // Scroll suave
     window.scrollTo({ top: 0, behavior: "smooth" });
-    // Garantiza compatibilidad con todos los navegadores
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   });
@@ -103,3 +114,19 @@ if (navLogo) {
     window.location.reload();
   });
 }
+
+// ANIMACIONES GSAP ADICIONALES (opcional)
+gsap.from(".about-title", {
+  y: 50,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.2,
+  ease: "power2.out",
+});
+gsap.from(".about-text", {
+  y: 30,
+  opacity: 0,
+  duration: 1,
+  delay: 0.5,
+  ease: "power2.out",
+});
