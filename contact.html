@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angel Mikan - Contact</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="nav-top">
+      <div class="logo">Mikan</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="works.html">Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO CONTACT -->
+    <header class="hero hero-contact">
+      <h1 class="hero-title">CONTACT</h1>
+      <p class="hero-subtitle">
+        Get in touch with me for collaborations, commissions, or just to say hi!
+      </p>
+    </header>
+
+    <!-- CONTACT FORM -->
+    <main class="contact-section">
+      <form class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your Name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Your Email" required />
+
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          rows="6"
+          placeholder="Your Message"
+          required
+        ></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>© 2026 Angel Mikan — All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script>
+      // Logo siempre vuelve al index.html
+      const navLogo = document.querySelector(".logo");
+      if (navLogo) {
+        navLogo.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = "index.html";
+        });
+      }
+    </script>
+  </body>
+</html>

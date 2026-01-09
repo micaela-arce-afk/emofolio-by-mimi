@@ -1,0 +1,163 @@
+:root {
+  --font-primary: "Poppins", sans-serif;
+  --color-text: #fff;
+  --color-accent: #7dd2f5; /* opcional para efectos, pero logo ahora blanco */
+  --color-accent-dark: #5ab0d6;
+}
+
+/* NAV idéntico a la home */
+.nav-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: #000;
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-primary);
+}
+
+.nav-top .logo {
+  color: #fff; /* blanco puro */
+  font-weight: 900;
+  font-size: 2.2rem;
+  cursor: pointer;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.nav-links a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.4rem;
+  transition: all 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+  text-shadow: 0 0 10px var(--color-accent), 0 0 20px rgba(125, 210, 245, 0.5);
+}
+
+/* HERO WORKS */
+.hero-works {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  height: 60vh;
+  text-align: center;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Título en neón blanco, un poco más pequeño */
+.hero-title {
+  font-family: var(--font-primary);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.hero-subtitle {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  color: #fff;
+  opacity: 0.85;
+  max-width: 700px;
+}
+
+/* RESPLANDOR DEL CONTENIDO */
+.works-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 0 60px rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+/* GRID DE WORKS */
+.works-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.work-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.work-card img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.work-card:hover img {
+  transform: scale(1.05);
+}
+.work-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s;
+}
+.work-card:hover .work-info {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* ESTRELLAS DE FONDO */
+.hero-works .stars-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-works .stars-container span {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.8; /* más visibles */
+  animation: starFloat 2s linear infinite;
+}
+@keyframes starFloat {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  .works-section {
+    padding: 2rem 1rem;
+  }
+}
