@@ -424,3 +424,14 @@ body {
     pointer-events: auto;
   }
 }
+.nav-links {
+  pointer-events: none;
+}
+
+.nav-links.active {
+  pointer-events: auto;
+}
+.nav-top {
+  position: relative;
+  z-index: 100;
+}

@@ -130,3 +130,10 @@ if (burger && navLinks) {
     burger.classList.toggle("open");
   });
 }
+const navLinksItems = document.querySelectorAll(".nav-links a");
+
+navLinksItems.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+});
