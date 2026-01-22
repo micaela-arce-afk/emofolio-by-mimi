@@ -1,127 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Angel Mikan – Works</title>
-    <meta
-      name="description"
-      content="Projects and works by Angel Mikan in illustration, graphic design, UX/UI and digital media."
-    />
-    <meta
-      name="keywords"
-      content="Angel Mikan, works, portfolio, illustration, graphic design, UX UI, digital media"
-    />
+  <title>Angel Mikan – Works</title>
+  <meta name="description" content="Video editing, illustration and design works by Angel Mikan." />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Angel Mikan – Works" />
-    <meta
-      property="og:description"
-      content="Explore selected works by Angel Mikan in illustration, design and digital media."
-    />
-    <meta
-      property="og:url"
-      content="https://micaela-arce-afk.github.io/emofolio-by-mimi/works.html"
-    />
-    <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/icons/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.png" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/works.css">
+</head>
 
-    <!-- Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"
-      rel="stylesheet"
-    />
+<body>
+  <!-- NAV -->
+  <nav class="nav-top">
+    <div class="logo">Mikan</div>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/works.css" />
-  </head>
+    <div class="burger" id="burger">
+      <span></span><span></span><span></span>
+    </div>
 
-  <body>
-    <!-- NAV -->
-    <nav class="nav-top">
-      <div class="logo">Mikan</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="works.html">Works</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="works.html">Works</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <!-- HERO WORKS -->
-    <header class="hero hero-works">
-      <h1 class="hero-title">WORKS</h1>
-      <p class="hero-subtitle">
-        These are some of the projects I’ve worked on in illustration, design,
-        and digital media.
-      </p>
-      <div class="stars-container"></div>
-    </header>
+  <!-- HERO -->
+  <header class="hero-works">
+    <h1 class="hero-title">WORKS</h1>
+    <p class="hero-subtitle">
+      Selected video editing, illustration and digital projects.
+    </p>
+    <div class="stars-container"></div>
+  </header>
 
-    <!-- WORKS GRID -->
-    <main class="works-section">
-      <div class="works-grid">
+  <!-- WORKS -->
+  <main class="works-section">
+
+    <!-- VIDEO EDITING -->
+    <section class="works-category">
+      <h2>VIDEO EDITING</h2>
+
+      <h3>MV Videos</h3>
+      <div class="video-grid">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+            allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+            allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <h3>Content Videos</h3>
+      <div class="video-grid">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+            allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <h3>TikToks</h3>
+      <div class="video-grid vertical">
+        <div class="video-card vertical">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+            allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ILLUSTRATION -->
+    <section class="works-category">
+      <h2>ILLUSTRATION</h2>
+
+      <div class="image-grid">
         <div class="work-card">
-          <img
-            src="assets/images/work1.webp"
-            alt="Illustration and graphic design project"
-            loading="lazy"
-          />
+          <img src="assets/images/work1.webp" alt="Illustration work">
           <div class="work-info">
-            <h3>Project Title 1</h3>
-            <p>Illustration / Graphic Design</p>
+            <h4>Illustration Project</h4>
           </div>
         </div>
 
         <div class="work-card">
-          <img
-            src="assets/images/work2.webp"
-            alt="UX UI and motion graphics project"
-            loading="lazy"
-          />
+          <img src="assets/images/work2.webp" alt="Graphic design work">
           <div class="work-info">
-            <h3>Project Title 2</h3>
-            <p>UX/UI / Motion Graphics</p>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <img
-            src="assets/images/work3.webp"
-            alt="3D and interactive visuals project"
-            loading="lazy"
-          />
-          <div class="work-info">
-            <h3>Project Title 3</h3>
-            <p>3D / Interactive Visuals</p>
+            <h4>Graphic Design</h4>
           </div>
         </div>
       </div>
-    </main>
+    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer-inner">
-        <p>© 2026 Angel Mikan — All rights reserved.</p>
-      </div>
-    </footer>
+  </main>
 
-    <!-- JS Librerías externas -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Angel Mikan — All rights reserved.</p>
+  </footer>
 
-    <!-- JS -->
-    <script src="assets/js/works-contact.js"></script>
-    <script>
-      const navLogo = document.querySelector(".logo");
-      if (navLogo) {
-        navLogo.addEventListener("click", () => {
-          window.location.href = "index.html";
-        });
-      }
-    </script>
-  </body>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+
+  <!-- JS -->
+  <script src="assets/js/works-contact.js"></script>
+</body>
 </html>

@@ -1,154 +1,117 @@
 :root {
-  --font-primary: "Poppins", sans-serif;
+  --color-bg: #000;
   --color-text: #fff;
   --color-accent: #7dd2f5;
-  --color-accent-dark: #5ab0d6;
-  --color-bg: #000; /* añadido para consistencia */
+  font-family: "Poppins", sans-serif;
 }
 
-/* NAV */
-.nav-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  background: var(--color-bg);
-  padding: 1rem 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: var(--font-primary);
-}
-
-.nav-top .logo {
-  color: var(--color-text);
-  font-weight: 900;
-  font-size: 2.2rem;
-  cursor: pointer;
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
-}
-
-.nav-links a {
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.4rem;
-  transition: all 0.3s;
-}
-
-.nav-links a:hover {
-  color: var(--color-accent);
-  text-shadow: 0 0 10px var(--color-accent), 0 0 20px rgba(125, 210, 245, 0.5);
-}
-
-/* HERO WORKS */
+/* HERO */
 .hero-works {
+  height: 60vh;
+  padding-top: 90px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding-top: 80px;
-  height: 60vh;
+  justify-content: center;
   text-align: center;
-  background-color: var(--color-bg); /* fondo negro asegurado */
   position: relative;
-  overflow: hidden;
-  color: var(--color-text);
 }
 
 .hero-title {
-  font-family: var(--font-primary);
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 900;
-  letter-spacing: 4px;
-  margin-bottom: 1rem;
-  color: var(--color-text);
-  text-shadow: 0 0 10px var(--color-text), 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .hero-subtitle {
-  font-family: var(--font-primary);
-  font-size: 1.5rem;
-  color: var(--color-text);
-  opacity: 0.85;
   max-width: 700px;
+  opacity: 0.85;
 }
 
-/* WORKS GRID */
+/* WORKS */
 .works-section {
-  padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  box-shadow: 0 0 60px rgba(255, 255, 255, 0.2);
-  position: relative;
-  z-index: 2;
-
-  /* fondo negro y texto blanco */
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  min-height: 100vh; /* cubre toda la pantalla */
+  padding: 4rem 1.5rem;
 }
 
-/* GRID DE TRABAJOS */
-.works-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+.works-category {
+  margin-bottom: 5rem;
+}
+
+.works-category h2 {
+  font-size: 2.2rem;
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+}
+
+.works-category h3 {
+  margin: 2rem 0 1rem;
+  font-size: 1.4rem;
+}
+
+/* VIDEO */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.video-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-grid.vertical .video-card {
+  aspect-ratio: 9 / 16;
+  max-width: 360px;
+}
+
+/* IMAGES */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
 }
 
 .work-card {
   position: relative;
+  border-radius: 14px;
   overflow: hidden;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .work-card img {
   width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  transition: transform 0.5s;
-}
-
-.work-card:hover img {
-  transform: scale(1.05);
+  display: block;
 }
 
 .work-info {
   position: absolute;
   bottom: 0;
-  left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  color: var(--color-text);
   padding: 1rem;
-  backdrop-filter: blur(4px);
-  transition: background 0.3s;
+  background: rgba(0,0,0,0.6);
 }
 
-.work-card:hover .work-info {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-/* ESTRELLAS */
-.hero-works .stars-container {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.8rem;
+/* MOBILE */
+@media (max-width: 428px) {
+  .hero-works {
+    height: 50vh;
   }
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
+
   .works-section {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
+  }
+
+  .video-grid.vertical {
+    justify-items: center;
   }
 }
