@@ -97,16 +97,6 @@ if (aboutSection) {
   }
 }
 
-// BOTÓN BACK TO TOP
-const pageTopBtn = document.getElementById("pageTopBtn");
-if (pageTopBtn) {
-  pageTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  });
-}
-
 // CLICK LOGO NAV
 const navLogo = document.querySelector(".logo");
 if (navLogo) {
@@ -130,3 +120,13 @@ gsap.from(".about-text", {
   delay: 0.5,
   ease: "power2.out",
 });
+// MENU HAMBURGUESA
+const burger = document.getElementById("burger");
+const navLinks = document.querySelector(".nav-links");
+
+if (burger && navLinks) {
+  burger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    burger.classList.toggle("open");
+  });
+}

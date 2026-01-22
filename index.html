@@ -4,18 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Angel Mikan - Portfolio</title>
+
     <meta
       name="description"
-      content="Portfolio de Angel Mikan: Diseño visual, ilustración, UX/UI, Motion Graphics y 3D."
+      content="Portfolio de Angel Mikan: Visual designer, illustrator, UX/UI, motion graphics and 3D."
     />
-    <meta
-      name="keywords"
-      content="Angel Mikan, Portfolio, Diseño, UX, UI, Ilustración, Motion Graphics, 3D"
-    />
-    <meta property="og:title" content="Portfolio de Angel Mikan" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Angel Mikan Portfolio" />
     <meta
       property="og:description"
-      content="Explora los proyectos y trabajos de Angel Mikan en diseño, ilustración y medios digitales."
+      content="Visual designer & illustrator portfolio"
     />
     <meta
       property="og:url"
@@ -24,18 +23,20 @@
     <meta property="og:type" content="website" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
 
-    <!-- Fuentes -->
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"
       rel="stylesheet"
     />
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/theme.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/preloader.css" />
   </head>
+
   <body>
     <!-- PRELOADER -->
     <div id="preloader">
@@ -48,6 +49,12 @@
     <!-- NAV -->
     <nav class="nav-top">
       <div class="logo">Mikan</div>
+      <div class="burger" id="burger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="works.html">Works</a></li>
@@ -58,139 +65,122 @@
     <!-- HERO -->
     <header class="hero">
       <div class="hero-carousel">
-        <img
-          src="assets/images/work1.webp"
-          class="carousel-item active"
-          loading="lazy"
-        />
-        <img
-          src="assets/images/work2.webp"
-          class="carousel-item"
-          loading="lazy"
-        />
-        <img
-          src="assets/images/work3.webp"
-          class="carousel-item"
-          loading="lazy"
-        />
+        <img src="assets/images/work1.webp" class="carousel-item active" />
+        <img src="assets/images/work2.webp" class="carousel-item" />
+        <img src="assets/images/work3.webp" class="carousel-item" />
       </div>
+
       <div class="hero-overlay"></div>
 
       <div class="hero-center">
-        <div class="name-block">
-          <div class="name-item mikan">
-            <span>M</span><span>I</span><span>K</span><span>A</span
-            ><span>N</span>
-          </div>
-
-          <!-- Sparkles alrededor de MIKAN -->
-          <div class="sparkles"></div>
-
-          <div class="professions">
-            <div class="name-item professions-line1">
-              Illustrator · Rigger · Graphic & Editorial Designer
-            </div>
-            <div class="name-item professions-line2">
-              Frontend & UX/UI Designer · 3D Modeler
-            </div>
-          </div>
+        <div class="name-item mikan">
+          <span>M</span><span>I</span><span>K</span><span>A</span><span>N</span>
         </div>
 
-        <div class="carousel-controls">
-          <button class="carousel-arrow left" id="prevBtn">&#10094;</button>
-          <button class="carousel-arrow right" id="nextBtn">&#10095;</button>
+        <div class="professions">
+          <div class="name-item">
+            Illustrator · Character Designer · Visual Designer
+          </div>
+          <div class="name-item">
+            UX/UI · Motion Graphics · 3D · Video Editing
+          </div>
         </div>
+      </div>
+
+      <!-- CONTROLES CARRUSEL -->
+      <div class="carousel-controls">
+        <button class="carousel-arrow left" id="prevBtn">&#10094;</button>
+        <button class="carousel-arrow right" id="nextBtn">&#10095;</button>
       </div>
     </header>
 
     <!-- ABOUT -->
     <main class="about-section" id="about">
-      <!-- Separador "ABOUT" tipo línea -->
       <div class="about-separator-container">
         <span class="line"></span>
         <span class="about-separator">ABOUT</span>
         <span class="line"></span>
       </div>
 
-      <div class="about-inner">
-        <!-- FOTO IZQUIERDA -->
-        <div class="about-left">
+      <div class="about-grid">
+        <!-- LEFT -->
+        <div class="about-col-left">
           <img
             src="assets/images/profile.webp"
-            alt="Foto de Mikan"
-            class="about-photo"
-            loading="lazy"
+            alt="Portrait of Mikan"
+            class="about-photo-large"
           />
-        </div>
 
-        <!-- TEXTO A LA DERECHA -->
-        <div class="about-right">
-          <h2 class="about-title">
-            <span class="about-large">MIKAN</span>
-            <span class="about-japanese">ミカン</span>
-          </h2>
+          <h2 class="about-heading">ABOUT ME</h2>
           <p class="about-text">
-            I’m Mikan, a visual designer and illustrator with a strong interest
-            in audiovisual creation and graphic experimentation. I studied
-            Audiovisual Design and Illustration at UDIT, where I developed a
-            multidisciplinary approach combining image, narrative, and
-            technology. My work focuses on digital illustration, motion
-            graphics, editorial design, and interactive visuals. I mainly work
-            with the Adobe Creative Suite, along with tools such as Cinema 4D,
-            Figma, Visual Studio Code, and Clip Studio Paint. I’m always
-            exploring new visual languages and creative challenges to keep
-            growing as a designer.
+            Hi! I’m Mikan and I am a fourth-year student of Audiovisual Design and
+            Illustration at UDIT, Madrid. I specialize in illustration, character
+            design, and video editing, and I’m always looking for projects that
+            allow me to explore new creative avenues.
           </p>
 
-          <div class="skills-icons">
-            <img
-              src="assets/icons/photoshop.webp"
-              class="skill-icon"
-              alt="Photoshop"
-              loading="lazy"
-            />
-            <img
-              src="assets/icons/illustrator.webp"
-              class="skill-icon"
-              alt="Illustrator"
-              loading="lazy"
-            />
-            <img
-              src="assets/icons/indesign.webp"
-              class="skill-icon"
-              alt="Premiere"
-              loading="lazy"
-            />
-            <img
-              src="assets/icons/aftereffects.webp"
-              class="skill-icon"
-              alt="After Effects"
-              loading="lazy"
-            />
-            <img
-              src="assets/icons/csp.webp"
-              class="skill-icon"
-              alt="Clip Studio Paint"
-              loading="lazy"
-            />
-            <img
-              src="assets/icons/figma.webp"
-              class="skill-icon"
-              alt="Figma"
-              loading="lazy"
-            />
-            <img
-              src="assets/icons/visual.webp"
-              class="skill-icon"
-              alt="VS Code"
-              loading="lazy"
-            />
-            <img
-              src="assets/icons/cinema.webp"
-              class="skill-icon"
-              alt="Cinema 4D"
-              loading="lazy"
-            />
+          <h3 class="about-subtitle">SOFTWARE</h3>
+          <div class="software-icons">
+            <img src="assets/icons/photoshop.webp" alt="Photoshop" />
+            <img src="assets/icons/illustrator.webp" alt="Illustrator" />
+            <img src="assets/icons/indesign.webp" alt="InDesign" />
+            <img src="assets/icons/lightroom.webp" alt="Lightroom" />
+            <img src="assets/icons/aftereffects.webp" alt="After Effects" />
+            <img src="assets/icons/premiere.webp" alt="Premiere Pro" />
+            <img src="assets/icons/filmora.webp" alt="Filmora 15" />
+            <img src="assets/icons/live2d.webp" alt="Live2D Cubism" />
+            <img src="assets/icons/cinema.webp" alt="Cinema 4D" />
+            <img src="assets/icons/figma.webp" alt="Figma" />
+            <img src="assets/icons/csp.webp" alt="Clip Studio Paint" />
+          </div>
+
+          <h3 class="about-subtitle">PROGRAMMING LANGUAGES</h3>
+          <div class="software-icons software-text">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="about-col-right">
+          <div class="about-block">
+            <h3>EXPERIENCE</h3>
+            <ul>
+              <li>Illustrator — IDOL CORP (2024)</li>
+              <li>Mural Artist — TURIUM, Edificio Beatriz (2023)</li>
+              <li>Content Writer — NINTENDEROS (2023–2024)</li>
+              <li>
+                Illustrator & Character Designer — TIWA Studio (2024–2025)
+              </li>
+              <li>
+                Freelance Illustrator, Rigger, 3D Modeler & Video Editor
+                (2020–Present)
+              </li>
+            </ul>
+          </div>
+
+          <div class="about-block">
+            <h3>LANGUAGES</h3>
+            <ul>
+              <li>Spanish — Native</li>
+              <li>English — C1 (Cambridge Advanced, 2020)</li>
+              <li>Japanese — A2 (Mitoyo Certificate, 2024)</li>
+            </ul>
+          </div>
+
+          <div class="about-block">
+            <h3>EDUCATION</h3>
+            <ul>
+              <li>
+                Official Bachelor’s Degree in Audiovisual Design & Illustration —
+                UDIT
+              </li>
+              <li>Degree in Illustration — ESDIP</li>
+              <li>
+                Short Erasmus Program — AP Hogeschool Antwerpen (Feb 2024)
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -198,14 +188,9 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-      <div class="footer-inner">
-        <p>© 2026 Angel Mikan — All rights reserved.</p>
-        <button id="pageTopBtn">BACK TO TOP ↑</button>
-      </div>
+      <p>© 2026 Angel Mikan — All rights reserved.</p>
     </footer>
-    <!-- JS Librerías externas -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
     <!-- JS -->
     <script src="assets/js/preloader.js"></script>
     <script src="assets/js/main.js"></script>
