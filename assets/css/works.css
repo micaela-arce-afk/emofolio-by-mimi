@@ -3,6 +3,7 @@
 ========================= */
 
 body {
+  margin: 0;
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-primary);
@@ -227,4 +228,18 @@ body {
   50% {
     transform: translateY(-6px);
   }
+}
+/* =========================
+ FOOTER FIX (CONTACT)
+========================= */
+
+.footer {
+  font-family: var(--font-primary);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  opacity: 0.85;
+}
+
+.footer p {
+  margin: 0;
 }

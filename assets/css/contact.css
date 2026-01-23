@@ -1,175 +1,267 @@
+/* =========================
+ ROOT
+========================= */
+
 :root {
   --font-primary: "Poppins", sans-serif;
-  --color-text: #fff;
+  --color-text: #ffffff;
   --color-accent: #7dd2f5;
   --color-accent-dark: #5ab0d6;
-  --color-bg: #000; /* fondo negro general */
+  --color-bg: #000000;
 }
 
-/* NAV */
-.nav-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
+/* =========================
+ BASE
+========================= */
+
+body {
+  margin: 0;
   background: var(--color-bg);
-  padding: 1rem 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  color: var(--color-text);
   font-family: var(--font-primary);
 }
 
-.nav-top .logo {
-  color: var(--color-text);
-  font-weight: 900;
-  font-size: 2.2rem;
-  cursor: pointer;
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
-}
+/* =========================
+ HERO CONTACT
+========================= */
 
-.nav-links a {
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.4rem;
-  transition: all 0.3s;
-}
-
-.nav-links a:hover {
-  color: var(--color-accent);
-  text-shadow: 0 0 10px var(--color-accent), 0 0 20px rgba(125, 210, 245, 0.5);
-}
-
-/* HERO CONTACT */
 .hero-contact {
+  min-height: 60vh;
+  padding-top: 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 80px;
-  height: 60vh;
   text-align: center;
-  background-color: var(--color-bg);
   position: relative;
   overflow: hidden;
-  color: var(--color-text);
 }
 
 .hero-title {
-  font-family: var(--font-primary);
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 900;
   letter-spacing: 4px;
-  margin-bottom: 1rem;
-  color: var(--color-text);
-  text-shadow: 0 0 10px var(--color-text), 0 0 20px rgba(255, 255, 255, 0.3);
+  text-shadow:
+    0 0 12px var(--color-accent),
+    0 0 24px rgba(125, 210, 245, 0.4);
+  animation: floatTitle 3s ease-in-out infinite;
 }
 
-.hero-subtitle {
-  font-family: var(--font-primary);
-  font-size: 1.5rem;
-  color: var(--color-text);
-  opacity: 0.85;
-  max-width: 700px;
+@keyframes floatTitle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
-/* CONTACT FORM */
-.contact-section {
-  max-width: 800px; /* RECTÁNGULO MÁS ANCHO */
-  margin: 4rem auto;
-  padding: 3rem 2rem;
-  box-shadow: 0 0 60px rgba(255, 255, 255, 0.2);
-  position: relative;
-  z-index: 2;
-  color: var(--color-text);
-  font-family: var(--font-primary);
-  border-radius: 16px;
-  background-color: #111; /* fondo del rectángulo */
-}
+/* =========================
+ STARS BACKGROUND
+========================= */
 
-/* FORMULARIO */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.contact-form label {
-  font-weight: 600;
-  color: var(--color-text);
-  margin-bottom: 0.8rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  max-width: 750px;
-  padding: 2rem 1.6rem;
-  border-radius: 14px;
-  border: none;
-  background: #222;
-  color: var(--color-text);
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #aaa;
-}
-
-.contact-form button {
-  padding: 1.8rem 2.5rem;
-  background: var(--color-text);
-  color: #000;
-  font-weight: 700;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-  margin-top: 1rem;
-}
-
-.contact-form button:hover {
-  background: #ddd;
-  color: #000;
-}
-
-/* ESTRELLAS */
-.hero-contact .stars-container {
+.stars-container {
   position: absolute;
   inset: 0;
-  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(
+      1.5px 1.5px at 70% 60%,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    radial-gradient(1px 1px at 40% 80%, rgba(255, 255, 255, 0.5), transparent);
+  background-size: 300px 300px;
+  animation: starsMove 60s linear infinite;
   z-index: 0;
 }
 
-/* FONDO GENERAL NEGRO PARA TODA LA PÁGINA */
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
+@keyframes starsMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 1000px;
+  }
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.8rem;
+.hero-contact > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+ CONTACT SECTION
+========================= */
+
+.contact-section {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+/* =========================
+ CONTACT CARD
+========================= */
+
+.contact-card {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 30px rgba(125, 210, 245, 0.25);
+}
+
+.contact-card h2 {
+  font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: var(--color-accent);
+  text-shadow: 0 0 12px var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.contact-intro {
+  opacity: 0.85;
+  margin-bottom: 2.5rem;
+}
+
+/* =========================
+ CONTACT LINKS
+========================= */
+
+.contact-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-links li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+
+.contact-links span {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.contact-links a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  text-shadow: 0 0 8px var(--color-accent);
+}
+
+/* =========================
+ VGEN BUTTON
+========================= */
+
+.vgen-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-accent);
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.vgen-button:hover {
+  background: var(--color-accent);
+  color: #000;
+  box-shadow: 0 0 15px rgba(125, 210, 245, 0.6);
+}
+
+.contact-note {
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* =========================
+ FOOTER
+========================= */
+
+.footer {
+  font-family: var(--font-primary);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  opacity: 0.85;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* =========================
+ MOBILE
+========================= */
+
+@media (max-width: 428px) {
+  .contact-links li {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
   }
-  .hero-subtitle {
-    font-size: 1.2rem;
+
+  .contact-card {
+    padding: 2.2rem 1.5rem;
   }
-  .contact-section {
-    padding: 2rem 1rem;
-    max-width: 95%;
+}
+/* =========================
+ STARS BACKGROUND (CONTACT)
+========================= */
+
+.hero-contact {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(
+      1.5px 1.5px at 70% 60%,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    radial-gradient(1px 1px at 40% 80%, rgba(255, 255, 255, 0.5), transparent);
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  animation: starsMove 60s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-contact > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes starsMove {
+  from {
+    background-position: 0 0;
   }
-  .contact-form input,
-  .contact-form textarea {
-    padding: 1.6rem 1rem;
-    max-width: 100%;
-  }
-  .contact-form button {
-    padding: 1.4rem 1.8rem;
+  to {
+    background-position: 1000px 1000px;
   }
 }

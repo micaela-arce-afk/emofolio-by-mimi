@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -8,10 +8,6 @@
     <meta
       name="description"
       content="Contact Angel Mikan for collaborations, commissions or creative projects."
-    />
-    <meta
-      name="keywords"
-      content="Angel Mikan, contact, portfolio, designer, illustrator"
     />
 
     <!-- Open Graph -->
@@ -27,7 +23,7 @@
     <meta property="og:type" content="website" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
 
     <!-- Fonts -->
     <link
@@ -36,7 +32,8 @@
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/nav.css" />
     <link rel="stylesheet" href="assets/css/contact.css" />
   </head>
 
@@ -44,6 +41,11 @@
     <!-- NAV -->
     <nav class="nav-top">
       <div class="logo">Mikan</div>
+
+      <button class="burger" id="burger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="works.html">Works</a></li>
@@ -54,59 +56,59 @@
     <!-- HERO CONTACT -->
     <header class="hero hero-contact">
       <h1 class="hero-title">CONTACT</h1>
-      <p class="hero-subtitle">
-        Get in touch with me for collaborations, commissions, or just to say hi!
-      </p>
       <div class="stars-container"></div>
     </header>
 
-    <!-- CONTACT FORM -->
+    <!-- CONTACT -->
     <main class="contact-section">
-      <form class="contact-form">
-        <label for="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          placeholder="Your Name"
-          required
-          aria-label="Your name"
-        />
+      <div class="contact-card">
+        <h2>LET’S TALK ✨</h2>
 
-        <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Your Email"
-          required
-          aria-label="Your email"
-        />
+        <p class="contact-intro">
+          For commissions, collaborations or just to say hi, you can find me
+          here:
+        </p>
 
-        <label for="message">Message</label>
-        <textarea
-          id="message"
-          rows="6"
-          placeholder="Your Message"
-          required
-          aria-label="Your message"
-        ></textarea>
+        <ul class="contact-links">
+          <li>
+            <span>Email</span>
+            <a href="mailto:tenshii.contact@gmail.com">
+              tenshii.contact.art@gmail.com
+            </a>
+          </li>
 
-        <button type="submit">Send Message</button>
-      </form>
+          <li>
+            <span>Instagram</span>
+            <a href="https://instagram.com/tenshii_gallery_" target="_blank">
+              @tenshii_gallery_
+            </a>
+          </li>
+
+          <li>
+            <span>Twitter / X</span>
+            <a href="https://twitter.com/tenshii_gallery" target="_blank">
+              @tenshii_gallery
+            </a>
+          </li>
+        </ul>
+
+        <a href="https://vgen.co/aphrodi" target="_blank" class="vgen-button">
+          View my VGen page
+        </a>
+
+        <p class="contact-note">VGen commissions page coming soon 💫</p>
+      </div>
     </main>
 
     <!-- FOOTER -->
     <footer class="footer">
-      <div class="footer-inner">
-        <p>© 2026 Angel Mikan — All rights reserved.</p>
-      </div>
+      <p>© 2026 Angel Mikan — All rights reserved.</p>
     </footer>
 
-    <!-- JS Librerías externas -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-
     <!-- JS -->
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/works-contact.js"></script>
+
     <script>
       const navLogo = document.querySelector(".logo");
       if (navLogo) {
