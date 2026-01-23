@@ -1,113 +1,175 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Angel Mikan – Works</title>
-  <meta name="description" content="Video editing, illustration and design works by Angel Mikan." />
+    <title>Angel Mikan – Works</title>
+    <meta name="description" content="Works by Angel Mikan." />
 
-  <link rel="icon" href="assets/icons/favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/icons/favicon.png" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/works.css">
-</head>
+    <!-- FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"
+      rel="stylesheet"
+    />
 
-<body>
-  <!-- NAV -->
-  <nav class="nav-top">
-    <div class="logo">Mikan</div>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/nav.css" />
+    <link rel="stylesheet" href="assets/css/works.css" />
+  </head>
 
-    <div class="burger" id="burger">
-      <span></span><span></span><span></span>
-    </div>
+  <body>
+    <!-- NAV -->
+    <nav class="nav-top">
+      <div class="logo">Mikan</div>
 
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="works.html">Works</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+      <button class="burger" id="burger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
 
-  <!-- HERO -->
-  <header class="hero-works">
-    <h1 class="hero-title">WORKS</h1>
-    <p class="hero-subtitle">
-      Selected video editing, illustration and digital projects.
-    </p>
-    <div class="stars-container"></div>
-  </header>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="works.html">Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
 
-  <!-- WORKS -->
-  <main class="works-section">
+    <!-- HERO -->
+    <header class="hero-works">
+      <h1 class="hero-title">WORKS</h1>
 
-    <!-- VIDEO EDITING -->
-    <section class="works-category">
-      <h2>VIDEO EDITING</h2>
+      <!-- MINI MENU -->
+      <nav class="works-filter">
+        <a href="#video">Video Editing</a>
+        <a href="#illustration">Illustration</a>
+        <a href="#visual">Visual Projects</a>
+      </nav>
 
-      <h3>MV Videos</h3>
-      <div class="video-grid">
-        <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID"
-            allowfullscreen loading="lazy"></iframe>
+      <div class="stars-container"></div>
+    </header>
+
+    <!-- WORKS -->
+    <main class="works-section">
+      <!-- VIDEO EDITING -->
+      <section class="works-category" id="video">
+        <h2>VIDEO EDITING</h2>
+
+        <h3>MV Videos</h3>
+        <div class="video-grid">
+          <iframe
+            src="https://www.youtube.com/embed/E6UoHjKhYT0"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/ofKnkfPagZA"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/zGvn6u0VU4s"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/3BT6u071rww"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
         </div>
-        <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID"
-            allowfullscreen loading="lazy"></iframe>
+
+        <h3>Content Videos</h3>
+        <div class="video-grid">
+          <iframe
+            src="https://www.youtube.com/embed/PyMNDVUrhOg"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/jqQVYXm2jx8"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/vFrY24LWSzs"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/VD1pg6Svn_0"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
         </div>
-      </div>
+        <!-- ACADEMIC PROJECTS -->
+        <section class="works-category" id="academic">
+          <h2>ACADEMIC PROJECTS</h2>
 
-      <h3>Content Videos</h3>
-      <div class="video-grid">
-        <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID"
-            allowfullscreen loading="lazy"></iframe>
-        </div>
-      </div>
+          <div class="video-grid">
+            <iframe
+              src="https://www.youtube.com/embed/BsvcYQxbYe8"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
 
-      <h3>TikToks</h3>
-      <div class="video-grid vertical">
-        <div class="video-card vertical">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID"
-            allowfullscreen loading="lazy"></iframe>
-        </div>
-      </div>
-    </section>
+            <iframe
+              src="https://www.youtube.com/embed/wqSWaV4kSmM"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </div>
+      </section>
 
-    <!-- ILLUSTRATION -->
-    <section class="works-category">
-      <h2>ILLUSTRATION</h2>
+      <!-- ILLUSTRATION -->
+      <section class="works-category" id="illustration">
+        <h2>ILLUSTRATION</h2>
 
-      <div class="image-grid">
-        <div class="work-card">
-          <img src="assets/images/work1.webp" alt="Illustration work">
-          <div class="work-info">
-            <h4>Illustration Project</h4>
+        <div class="image-grid">
+          <div class="work-card">
+            <img
+              src="assets/images/work1.webp"
+              alt="Comic and storyboard cover"
+            />
+            <p class="work-caption">Comic & Storyboard II — class cover</p>
+          </div>
+
+          <div class="work-card">
+            <img src="assets/images/work2.webp" alt="Dokuzu MV artwork" />
+            <p class="work-caption">Artwork for <em>Dokuzu</em> MV</p>
+          </div>
+
+          <div class="work-card">
+            <img src="assets/images/work3.webp" alt="Yashiro Nene fanart" />
+            <p class="work-caption">Yashiro Nene — fanart</p>
           </div>
         </div>
+      </section>
 
-        <div class="work-card">
-          <img src="assets/images/work2.webp" alt="Graphic design work">
-          <div class="work-info">
-            <h4>Graphic Design</h4>
-          </div>
+      <!-- VISUAL PROJECTS -->
+      <section class="works-category" id="visual">
+        <h2>VISUAL DESIGN</h2>
+
+        <div class="soon-placeholder">
+          <p>Working on it ✦ coming soon</p>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-  </main>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© 2026 Angel Mikan — All rights reserved.</p>
+    </footer>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 Angel Mikan — All rights reserved.</p>
-  </footer>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <!-- TIKTOK -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
 
-  <!-- JS -->
-  <script src="assets/js/works-contact.js"></script>
-</body>
+    <!-- JS -->
+    <script src="assets/js/works-contact.js"></script>
+  </body>
 </html>

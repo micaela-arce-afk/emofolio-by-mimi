@@ -37,9 +37,15 @@ function generateStars(selector, count = 60) {
       opacity: Math.random(),
       duration: 1 + Math.random() * 2,
       repeat: -1,
-      yoyo: true
+      yoyo: true,
     });
   }
 }
 
 generateStars(".hero-works .stars-container");
+// Refrescar embeds de TikTok
+window.addEventListener("load", () => {
+  if (window.tiktokEmbed) {
+    window.tiktokEmbed.load();
+  }
+});
